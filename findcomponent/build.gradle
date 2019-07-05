@@ -1,0 +1,81 @@
+if (isBuildModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+android {
+    resourcePrefix "find_"
+
+    sourceSets {
+        main {
+            if (isBuildModule.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+                java {
+                    //全部Module一起编译的时候剔除debug目录
+                    exclude '**/**/debug/**'
+                }
+            }
+        }
+    }
+
+    // 用于编译的SDK版本
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    // 用于Gradle编译项目的工具版本
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    defaultConfig {
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.chenyacheng.findcomponent"
+        }
+        // 最低支持Android版本
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        // 目标版本
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        // 版本号
+        versionCode rootProject.ext.android["versionCode"]
+        // 版本名称
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        // 调试版本
+        debug {
+            // minifyEnabled是否启用混淆
+            minifyEnabled false
+            // Zipalign优化
+            zipAlignEnabled true
+            // 加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        // 发布版本
+        release {
+            // minifyEnabled是否启用混淆
+            minifyEnabled false
+            // 删除无效的Resource
+            shrinkResources false
+            // Zipalign优化
+            zipAlignEnabled true
+            // 加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api project(':commonlib')
+}

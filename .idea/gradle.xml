@@ -3,11 +3,21 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/commonlib" />
+            <option value="$PROJECT_DIR$/commonuilib" />
+            <option value="$PROJECT_DIR$/findcomponent" />
+            <option value="$PROJECT_DIR$/homecomponent" />
+            <option value="$PROJECT_DIR$/mecomponent" />
+            <option value="$PROJECT_DIR$/wxannotaion" />
+            <option value="$PROJECT_DIR$/wxcompiler" />
+          </set>
+        </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
