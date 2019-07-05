@@ -1,33 +1,61 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
-
-
+    // 用于编译的SDK版本
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    // 用于Gradle编译项目的工具版本
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        // 最低支持Android版本
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        // 目标版本
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        // 版本号
+        versionCode rootProject.ext.android["versionCode"]
+        // 版本名称
+        versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
 
     }
 
     buildTypes {
-        release {
+        // 调试版本
+        debug {
+            // minifyEnabled是否启用混淆
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Zipalign优化
+            zipAlignEnabled true
+            // 加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        // 发布版本
+        release {
+            // minifyEnabled是否启用混淆
+            minifyEnabled false
+            // 删除无效的Resource
+            shrinkResources false
+            // Zipalign优化
+            zipAlignEnabled true
+            // 加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    api project(':commonlib')
 }
