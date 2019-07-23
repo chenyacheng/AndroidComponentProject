@@ -6,11 +6,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.chenyacheng.commoblib.base.BaseActivity;
+import com.chenyacheng.commoblib.base.BaseInnerActivity;
 import com.chenyacheng.commoblib.navigationbar.UltimateBar;
 import com.chenyacheng.mecomponent.R;
 import com.chenyacheng.mecomponent.ui.fragment.MeFragment;
-
 
 /**
  * 我的
@@ -18,7 +17,7 @@ import com.chenyacheng.mecomponent.ui.fragment.MeFragment;
  * @author chenyacheng
  * @date 2019/01/21
  */
-public class MeActivity extends BaseActivity {
+public class MeActivity extends BaseInnerActivity {
 
     private MeFragment fragment;
 

@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 
-import com.chenyacheng.commoblib.base.BaseActivity;
+import com.chenyacheng.commoblib.base.BaseInnerActivity;
 import com.chenyacheng.commoblib.navigationbar.UltimateBar;
 import com.chenyacheng.findcomponent.R;
 import com.chenyacheng.findcomponent.ui.fragment.FindFragment;
@@ -20,7 +20,7 @@ import com.chenyacheng.findcomponent.ui.fragment.FindFragment;
  * @author chenyacheng
  * @date 2019/01/21
  */
-public class FindActivity extends BaseActivity {
+public class FindActivity extends BaseInnerActivity {
 
     private FindFragment fragment;
 

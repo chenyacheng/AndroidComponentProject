@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-import com.chenyacheng.commoblib.base.BaseActivity;
+import com.chenyacheng.commoblib.base.BaseInnerActivity;
 import com.chenyacheng.component.R;
 import com.chenyacheng.component.ui.activity.main.MainFragmentActivity;
 
@@ -15,7 +15,7 @@ import com.chenyacheng.component.ui.activity.main.MainFragmentActivity;
  * @author chenyacheng
  * @date 2019/04/11
  */
-public class SplashActivity extends BaseActivity implements Handler.Callback {
+public class SplashActivity extends BaseInnerActivity implements Handler.Callback {
 
     private Handler mHandler;
 
@@ -28,8 +28,8 @@ public class SplashActivity extends BaseActivity implements Handler.Callback {
     @Override
     protected void onResume() {
         super.onResume();
-        // 休眠1500毫秒后进入主界面
-        mHandler.sendEmptyMessageDelayed(0, 1500);
+        // 休眠1000毫秒后进入主界面
+        mHandler.sendEmptyMessageDelayed(0, 1000);
     }
 
     @Override

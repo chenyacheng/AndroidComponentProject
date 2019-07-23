@@ -3,11 +3,10 @@ package com.chenyacheng.homecomponent.ui.fragment;
 import android.view.View;
 
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
-import com.chenyacheng.commoblib.utils.ToastUtils;
+import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.homecomponent.R;
+import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.android.FragmentEvent;
-
-import io.reactivex.ObservableTransformer;
 
 /**
  * fragment首页
@@ -32,7 +31,6 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
         return this;
     }
 
-
     @Override
     public void init(View rootView) {
 
@@ -45,11 +43,11 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
 
     @Override
     public void setMsg(String msg) {
-        ToastUtils.showShortToast(msg);
+        SnackBarBuilder.getInstance().builderShort(mContext, msg);
     }
 
     @Override
-    public <T> ObservableTransformer<T, T> bindLifecycle() {
+    public <T> LifecycleTransformer<T> bindLifecycle() {
         return this.bindUntilEvent(FragmentEvent.PAUSE);
     }
 }

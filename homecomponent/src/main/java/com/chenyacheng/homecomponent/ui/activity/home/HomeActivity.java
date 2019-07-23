@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.chenyacheng.commoblib.base.BaseActivity;
+import com.chenyacheng.commoblib.base.BaseInnerActivity;
 import com.chenyacheng.commoblib.navigationbar.UltimateBar;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.ui.fragment.HomeFragment;
@@ -17,7 +17,7 @@ import com.chenyacheng.homecomponent.ui.fragment.HomeFragment;
  * @author chenyacheng
  * @date 2019/01/21
  */
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseInnerActivity {
 
     private HomeFragment fragment;
 

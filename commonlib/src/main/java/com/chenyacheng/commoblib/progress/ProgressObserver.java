@@ -40,10 +40,10 @@ public class ProgressObserver<T> implements Observer<T>, ProgressCancelListener 
     public void onNext(T t) {
         if (listener != null) {
             BaseResponse baseResponse = (BaseResponse) t;
-            if (StatusCode.REQUEST_SUCCESS.equals(baseResponse.getStatusCode())) {
+            if (StatusCode.REQUEST_SUCCESS.equals(baseResponse.getCode())) {
                 listener.onNext(baseResponse.getData());
             } else {
-                ExceptionHandleUtils exceptionHandleUtils = new ExceptionHandleUtils(true, baseResponse.getStatusCode(), baseResponse.getStatusCodeMessage());
+                ExceptionHandleUtils exceptionHandleUtils = new ExceptionHandleUtils(true, baseResponse.getCode(), baseResponse.getMessage());
                 listener.onError(exceptionHandleUtils);
             }
         }

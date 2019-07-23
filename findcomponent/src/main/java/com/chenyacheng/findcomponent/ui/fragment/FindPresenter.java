@@ -8,13 +8,13 @@ import android.content.Context;
  * @author chenyacheng
  * @date 2019/02/19
  */
-public class FindPresenter extends FindContract.AbstractPresenter {
+class FindPresenter extends FindContract.AbstractPresenter {
 
-    private FindModel<Object> orderListStatusModel;
+    private FindModel orderListStatusModel;
     private Context context;
 
     FindPresenter(Context context) {
-        this.orderListStatusModel = new FindModel<>();
+        this.orderListStatusModel = new FindModel();
         this.context = context;
     }
 

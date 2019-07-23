@@ -14,10 +14,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.chenyacheng.commoblib.base.BaseActivity;
+import com.chenyacheng.commoblib.base.BaseInnerActivity;
+import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.commoblib.navigationbar.UltimateBar;
 import com.chenyacheng.commoblib.router.ARouterConstant;
-import com.chenyacheng.commoblib.utils.ToastUtils;
 import com.chenyacheng.commoblib.widget.CustomViewPager;
 import com.chenyacheng.component.R;
 import com.chenyacheng.findcomponent.ui.fragment.FindFragment;
@@ -34,7 +34,7 @@ import java.util.List;
  * @date 2019/01/21
  */
 @Route(path = ARouterConstant.PATH_APP_MAIN_ACTIVITY)
-public class MainFragmentActivity extends BaseActivity {
+public class MainFragmentActivity extends BaseInnerActivity {
 
     private List<Fragment> fragmentList = new ArrayList<>();
     /**
@@ -129,10 +129,11 @@ public class MainFragmentActivity extends BaseActivity {
         // 与上次点击返回键时刻作差
         if ((System.currentTimeMillis() - lastBackPressedTime) > backPressedInterval) {
             // 大于2000ms则认为是误操作，使用Toast进行提示
-            ToastUtils.showShortToast("再按一次退出程序");
+            SnackBarBuilder.getInstance().builderShort(this, "再按一次退出程序");
             // 并记录下本次点击“返回键”的时刻，以便下次进行判断
             lastBackPressedTime = System.currentTimeMillis();
         } else {
+            SnackBarBuilder.getInstance().hideView();
             // 小于2000ms，App切入后台
             if (!moveTaskToBack(false)) {
                 // 非根Activity，切入后台失败，执行返回操作

@@ -1,50 +1,57 @@
 package com.chenyacheng.commoblib.base;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-
 /**
- * 基类
+ * 父类->基类->动态指定类型->泛型设计（通过泛型指定动态类型->由子类指定，父类只需要规定范围即可）
  *
  * @author chenyacheng
- * @date 2019/07/04
+ * @date 2019/01/16
  */
-public abstract class BaseActivity extends RxAppCompatActivity {
+public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V>> extends BaseInnerActivity implements UiOperation<V, P> {
+    /**
+     * 引用P层
+     */
+    private P presenter;
+    /**
+     * 引用V层
+     */
+    private V view;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ARouter.getInstance().inject(this);
-        // 禁止所有的activity横屏
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setContentView(getLayoutId());
+        if (presenter == null) {
+            presenter = createPresenter();
+        }
+        if (view == null) {
+            view = createView();
+        }
+        if (presenter != null && view != null) {
+            presenter.attachView(view);
+        }
+        init();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
+    /**
+     * 初始化
+     */
+    public abstract void init();
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
+    /**
+     * 在activity销毁时，将p层与v视图解绑
+     */
     @Override
     protected void onDestroy() {
+        if (presenter != null) {
+            presenter.detachView();
+        }
         super.onDestroy();
+    }
+
+    public P getPresenter() {
+        return presenter;
     }
 }

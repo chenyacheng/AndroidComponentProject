@@ -1,2 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.chenyacheng.commonuilib" />
+    package="com.chenyacheng.commonuilib" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="false"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name="com.chenyacheng.component.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:label="微信支付页"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+    </application>
+
+</manifest>

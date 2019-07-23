@@ -10,14 +10,13 @@ import android.content.Context;
  */
 public class HomePresenter extends HomeContract.AbstractPresenter {
 
-    private HomeModel<Object> homeModel;
+    private HomeModel homeModel;
     private Context context;
 
     HomePresenter(Context context) {
-        this.homeModel = new HomeModel<>();
+        this.homeModel = new HomeModel();
         this.context = context;
     }
-
 
     @Override
     public void home() {

@@ -1,6 +1,6 @@
 package com.chenyacheng.commoblib.base;
 
-import android.content.Context;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -19,7 +19,7 @@ import com.trello.rxlifecycle2.components.support.RxFragment;
  */
 public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresenter<V>> extends RxFragment implements UiOperation<V, P> {
 
-    public Context mContext;
+    public Activity mContext;
     /**
      * 引用V层和P层
      */

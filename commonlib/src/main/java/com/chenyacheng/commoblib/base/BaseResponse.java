@@ -8,16 +8,16 @@ package com.chenyacheng.commoblib.base;
  */
 public class BaseResponse {
 
-    private String errCode;
-    private String errMsg;
+    private String code;
+    private String msg;
     private Object data;
 
-    public String getStatusCode() {
-        return errCode;
+    public String getCode() {
+        return code;
     }
 
-    public String getStatusCodeMessage() {
-        return errMsg;
+    public String getMessage() {
+        return msg;
     }
 
     public Object getData() {

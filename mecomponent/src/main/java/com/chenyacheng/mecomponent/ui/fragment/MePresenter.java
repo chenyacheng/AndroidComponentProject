@@ -8,14 +8,13 @@ import android.content.Context;
  */
 class MePresenter extends MeContract.AbstractPresenter {
 
-    private MeModel<Object> meModel;
+    private MeModel meModel;
     private Context context;
 
     MePresenter(Context context) {
-        this.meModel = new MeModel<>();
+        this.meModel = new MeModel();
         this.context = context;
     }
-
 
     @Override
     public void me() {

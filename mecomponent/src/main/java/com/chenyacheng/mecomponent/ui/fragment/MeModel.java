@@ -8,6 +8,6 @@ import com.chenyacheng.commoblib.base.BaseModel;
  * @author chenyacheng
  * @date 2019/01/21
  */
-class MeModel<T> extends BaseModel<T> {
+class MeModel extends BaseModel {
 
 }

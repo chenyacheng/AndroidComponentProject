@@ -3,11 +3,10 @@ package com.chenyacheng.findcomponent.ui.fragment;
 import android.view.View;
 
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
-import com.chenyacheng.commoblib.utils.ToastUtils;
+import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.findcomponent.R;
+import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.android.FragmentEvent;
-
-import io.reactivex.ObservableTransformer;
 
 /**
  * 订单列表的状态页面
@@ -44,13 +43,11 @@ public class FindFragment extends BaseLazyFragment<FindContract.View, FindContra
 
     @Override
     public void setMsg(String msg) {
-        ToastUtils.showShortToast(msg);
+        SnackBarBuilder.getInstance().builderShort(mContext, msg);
     }
 
     @Override
-    public <T> ObservableTransformer<T, T> bindLifecycle() {
+    public <T> LifecycleTransformer<T> bindLifecycle() {
         return this.bindUntilEvent(FragmentEvent.PAUSE);
     }
-
-
 }

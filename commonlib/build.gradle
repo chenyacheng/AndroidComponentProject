@@ -108,9 +108,6 @@ dependencies {
     // 微信支付
     api rootProject.ext.dependencies["wechat-pay"]
     api 'com.android.support:multidex:1.0.3'
-    // 微信支付封装库
-    api project(':wxannotaion')
-    annotationProcessor project(':wxcompiler')
     // 内存泄漏检测库
     debugApi 'com.squareup.leakcanary:leakcanary-android:1.6.2'
     releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'

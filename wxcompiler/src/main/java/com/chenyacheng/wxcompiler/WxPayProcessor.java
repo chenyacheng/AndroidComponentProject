@@ -1,10 +1,10 @@
-package com.wfw.wodujiagongyu.wx.compiler;
+package com.chenyacheng.wxcompiler;
 
+import com.chenyacheng.wxannotaion.WXAppId;
 import com.google.auto.service.AutoService;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.TypeSpec;
-import com.wfw.wodujiagongyu.wx.annotaion.WXAppId;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -24,9 +24,12 @@ import javax.lang.model.util.Elements;
 /**
  * 微信支付
  * 注解处理器
+ *
+ * @author chenyacheng
+ * @date 2019/07/23
  */
 @AutoService(Processor.class)
-public class WXPayProcessor extends AbstractProcessor {
+public class WxPayProcessor extends AbstractProcessor {
 
     private Filer filer;
     private Elements elements;
@@ -56,7 +59,7 @@ public class WXPayProcessor extends AbstractProcessor {
             return false;
         }
         // 指定路径下的微信支付返回页面
-        TypeElement payActivity = elements.getTypeElement("com.wodujiagongyu.commonlib.ui.activity.weixin.pay.WXPayActivity");
+        TypeElement payActivity = elements.getTypeElement("com.chenyacheng.commonuilib.ui.activity.pay.weixin.WxPayActivity");
         String applicationId = null;
         Set<? extends Element> payAppIds = roundEnv.getElementsAnnotatedWith(WXAppId.class);
         if (payAppIds != null && payAppIds.size() > 0) {

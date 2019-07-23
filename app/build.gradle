@@ -66,5 +66,6 @@ dependencies {
         implementation project(':homecomponent')
         implementation project(':findcomponent')
         implementation project(':mecomponent')
+        implementation project(':commonuilib')
     }
 }

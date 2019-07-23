@@ -8,6 +8,6 @@ import com.chenyacheng.commoblib.base.BaseModel;
  * @author chenyacheng
  * @date 2019/02/19
  */
-class FindModel<T> extends BaseModel<T> {
+class FindModel extends BaseModel {
 
 }
