@@ -1,6 +1,8 @@
 package com.chenyacheng.commoblib.base;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.chenyacheng.commoblib.app.AppDelegate;
 
@@ -26,5 +28,12 @@ public class BaseApplication extends Application {
         application = this;
         AppDelegate appDelegate = new AppDelegate(this);
         appDelegate.onCreate();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        // 5.0以下机型无法运行应用
+        MultiDex.install(this);
     }
 }

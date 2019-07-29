@@ -76,6 +76,7 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.android.support:multidex:1.0.3'
     // design依赖
     api 'com.android.support:design:28.0.0'
     api 'com.android.support:appcompat-v7:28.0.0'
@@ -107,7 +108,6 @@ dependencies {
     api rootProject.ext.dependencies["arouter-compiler"]
     // 微信支付
     api rootProject.ext.dependencies["wechat-pay"]
-    api 'com.android.support:multidex:1.0.3'
     // 内存泄漏检测库
     debugApi 'com.squareup.leakcanary:leakcanary-android:1.6.2'
     releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'

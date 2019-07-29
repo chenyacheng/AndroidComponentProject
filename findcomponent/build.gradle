@@ -28,6 +28,7 @@ android {
     defaultConfig {
         if (isBuildModule.toBoolean()) {
             applicationId "com.chenyacheng.findcomponent"
+            multiDexEnabled true
         }
         // 最低支持Android版本
         minSdkVersion rootProject.ext.android["minSdkVersion"]

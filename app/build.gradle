@@ -8,6 +8,8 @@ android {
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
     // 项目默认配置
     defaultConfig {
+        // 引用第三方库的jar文件，都有可能会触发这个错误，api 'com.android.support:multidex:1.0.3'，在Application类的attachBaseContext方法添加MultiDex.install(this);
+        multiDexEnabled true
         // 应用程序包名
         applicationId "com.chenyacheng.component"
         // 最低支持Android版本
