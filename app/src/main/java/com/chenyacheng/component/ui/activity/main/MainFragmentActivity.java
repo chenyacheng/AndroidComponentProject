@@ -63,7 +63,7 @@ public class MainFragmentActivity extends BaseInnerActivity {
                 .statusDrawable2(statusDrawable2)
                 .create()
                 .drawableBar();
-        CustomViewPager viewPager = findViewById(R.id.main_view_pager);
+        final CustomViewPager viewPager = findViewById(R.id.main_view_pager);
         fragmentList.add(new HomeFragment());
         fragmentList.add(new FindFragment());
         fragmentList.add(new MeFragment());

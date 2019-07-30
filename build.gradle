@@ -1,5 +1,16 @@
 apply from: "dependencies.gradle"
 
+ext {
+    compileSdk = 28
+    buildTools = "28.0.3"
+    javaVersion = JavaVersion.VERSION_1_8
+    minSdk = 15
+    maxSdk = 28
+    targetSdk = 28
+    versionCode = 1
+    versionName = "1.0.0"
+}
+
 buildscript {
     ext.kotlin_version = '1.3.10'
     repositories {
@@ -8,7 +19,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.1'
+        classpath 'com.android.tools.build:gradle:3.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         //自动化maven打包插件
         //classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'

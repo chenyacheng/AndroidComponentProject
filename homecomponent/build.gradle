@@ -22,22 +22,23 @@ android {
     }
 
     // 用于编译的SDK版本
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    compileSdkVersion compileSdk
     // 用于Gradle编译项目的工具版本
-    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    buildToolsVersion buildTools
     defaultConfig {
         if (isBuildModule.toBoolean()) {
             applicationId "com.chenyacheng.homecomponent"
             multiDexEnabled true
         }
-        // 最低支持Android版本
-        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        // 最低、最高支持Android版本
+        minSdkVersion minSdk
+        maxSdkVersion maxSdk
         // 目标版本
-        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        targetSdkVersion targetSdk
         // 版本号
-        versionCode rootProject.ext.android["versionCode"]
+        versionCode versionCode
         // 版本名称
-        versionName rootProject.ext.android["versionName"]
+        versionName versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
@@ -72,8 +73,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility javaVersion
+        targetCompatibility javaVersion
     }
 }
 
