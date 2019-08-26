@@ -2,14 +2,15 @@ package com.chenyacheng.commoblib.base;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.chenyacheng.commoblib.utils.LogUtils;
-import com.trello.rxlifecycle2.components.support.RxFragment;
 
 /**
  * 父类->基类->动态指定类型->泛型设计（通过泛型指定动态类型->由子类指定，父类只需要规定范围即可）
@@ -17,7 +18,7 @@ import com.trello.rxlifecycle2.components.support.RxFragment;
  * @author chenyacheng
  * @date 2019/01/21
  */
-public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresenter<V>> extends RxFragment implements UiOperation<V, P> {
+public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresenter<V>> extends Fragment implements UiOperation<V, P> {
 
     public Activity mContext;
     /**
@@ -86,7 +87,7 @@ public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresent
     /**
      * @param visible Fragment当前是否可见，然后调用相关方法
      */
-    public void disPatchFragment(boolean visible) {
+    private void disPatchFragment(boolean visible) {
         currentVisibleState = visible;
         // Fragment可见
         if (visible) {
@@ -108,14 +109,14 @@ public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresent
     /**
      * fragment首次可见的方法
      */
-    public void onFragmentFirst() {
+    private void onFragmentFirst() {
         LogUtils.showLogCompletion("onFragmentFirst", "首次可见", 1000, "verbose");
     }
 
     /**
      * fragment可见的方法
      */
-    public void onFragmentVisible() {
+    private void onFragmentVisible() {
         // 子Fragment调用次方法，执行可见操作
         LogUtils.showLogCompletion("onFragmentVisibility", "可见", 1000, "verbose");
     }
@@ -123,7 +124,7 @@ public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresent
     /**
      * fragment不可见的方法
      */
-    public void onFragmentInvisibility() {
+    private void onFragmentInvisibility() {
         LogUtils.showLogCompletion("onFragmentInvisibility", "不可见", 1000, "verbose");
     }
 

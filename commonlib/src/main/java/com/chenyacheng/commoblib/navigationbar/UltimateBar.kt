@@ -2,7 +2,7 @@ package com.chenyacheng.commoblib.navigationbar
 
 import android.app.Activity
 import android.graphics.drawable.Drawable
-import android.support.v4.widget.DrawerLayout
+import androidx.drawerlayout.widget.DrawerLayout
 import android.view.View
 
 /**

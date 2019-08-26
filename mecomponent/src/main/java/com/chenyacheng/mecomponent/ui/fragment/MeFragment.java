@@ -5,8 +5,6 @@ import android.view.View;
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.mecomponent.R;
-import com.trello.rxlifecycle2.LifecycleTransformer;
-import com.trello.rxlifecycle2.android.FragmentEvent;
 
 /**
  * fragment我的
@@ -45,10 +43,5 @@ public class MeFragment extends BaseLazyFragment<MeContract.View, MeContract.Abs
     @Override
     public void setMsg(String msg) {
         SnackBarBuilder.getInstance().builderShort(mContext, msg);
-    }
-
-    @Override
-    public <T> LifecycleTransformer<T> bindLifecycle() {
-        return this.bindUntilEvent(FragmentEvent.PAUSE);
     }
 }

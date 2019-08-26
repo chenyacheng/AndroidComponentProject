@@ -2,10 +2,11 @@ package com.chenyacheng.commoblib.base;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 /**
  * 基本内部类
@@ -13,7 +14,7 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
  * @author chenyacheng
  * @date 2019/07/04
  */
-public abstract class BaseInnerActivity extends RxAppCompatActivity {
+public abstract class BaseInnerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

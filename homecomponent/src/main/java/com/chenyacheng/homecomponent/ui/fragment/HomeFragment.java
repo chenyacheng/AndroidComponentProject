@@ -1,12 +1,14 @@
 package com.chenyacheng.homecomponent.ui.fragment;
 
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.lifecycle.ViewModelProviders;
 
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.homecomponent.R;
-import com.trello.rxlifecycle2.LifecycleTransformer;
-import com.trello.rxlifecycle2.android.FragmentEvent;
 
 /**
  * fragment首页
@@ -33,7 +35,14 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
 
     @Override
     public void init(View rootView) {
+        // 构建ViewModel对象
+        final HomeViewModel model = ViewModelProviders.of(this).get(HomeViewModel.class);
+        TextView homeTv = rootView.findViewById(R.id.home_tv);
+        Button homeBtn = rootView.findViewById(R.id.home_btn);
+        homeBtn.setOnClickListener(view -> model.getContentData());
+        model.getContent().observe(this, homeTv::setText);
 
+       
     }
 
     @Override
@@ -44,10 +53,5 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
     @Override
     public void setMsg(String msg) {
         SnackBarBuilder.getInstance().builderShort(mContext, msg);
-    }
-
-    @Override
-    public <T> LifecycleTransformer<T> bindLifecycle() {
-        return this.bindUntilEvent(FragmentEvent.PAUSE);
     }
 }

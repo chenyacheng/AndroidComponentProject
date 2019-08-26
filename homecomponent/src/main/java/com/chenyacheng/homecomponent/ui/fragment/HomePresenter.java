@@ -20,6 +20,6 @@ public class HomePresenter extends HomeContract.AbstractPresenter {
 
     @Override
     public void home() {
-
+        bindAutoDispose();
     }
 }

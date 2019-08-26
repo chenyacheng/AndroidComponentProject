@@ -37,11 +37,11 @@ public class AppDelegate {
         UserInfo.init(application);
         // 初始化配置信息
         ConfigInfo.init(application);
-        if (BuildConfig.LEAKCANARY_IS_DEBUG) {
-            if (LeakCanary.isInAnalyzerProcess(application)) {
-                return;
-            }
-            LeakCanary.install(application);
+        if (LeakCanary.isInAnalyzerProcess(application)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
         }
+        LeakCanary.install(application);
     }
 }

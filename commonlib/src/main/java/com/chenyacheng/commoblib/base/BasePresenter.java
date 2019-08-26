@@ -1,5 +1,9 @@
 package com.chenyacheng.commoblib.base;
 
+import com.uber.autodispose.AutoDispose;
+import com.uber.autodispose.AutoDisposeConverter;
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
+
 /**
  * 封装presenter，用于view绑定与解绑
  *
@@ -28,5 +32,9 @@ public abstract class BasePresenter<V extends BaseView> {
      */
     void detachView() {
         mView = null;
+    }
+
+    public <T> AutoDisposeConverter<T> bindAutoDispose() {
+        return AutoDispose.autoDisposable(AndroidLifecycleScopeProvider.from(mView));
     }
 }

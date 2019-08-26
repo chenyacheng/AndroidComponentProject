@@ -21,6 +21,6 @@ class FindPresenter extends FindContract.AbstractPresenter {
 
     @Override
     void find() {
-
+        bindAutoDispose();
     }
 }

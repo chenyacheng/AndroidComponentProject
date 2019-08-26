@@ -5,11 +5,9 @@ import android.view.View;
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.findcomponent.R;
-import com.trello.rxlifecycle2.LifecycleTransformer;
-import com.trello.rxlifecycle2.android.FragmentEvent;
 
 /**
- * 订单列表的状态页面
+ * fragment发现
  *
  * @author chenyacheng
  * @date 2019/02/16
@@ -33,7 +31,6 @@ public class FindFragment extends BaseLazyFragment<FindContract.View, FindContra
 
     @Override
     public void init(View rootView) {
-
     }
 
     @Override
@@ -44,10 +41,5 @@ public class FindFragment extends BaseLazyFragment<FindContract.View, FindContra
     @Override
     public void setMsg(String msg) {
         SnackBarBuilder.getInstance().builderShort(mContext, msg);
-    }
-
-    @Override
-    public <T> LifecycleTransformer<T> bindLifecycle() {
-        return this.bindUntilEvent(FragmentEvent.PAUSE);
     }
 }

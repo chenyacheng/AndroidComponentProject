@@ -2,7 +2,6 @@ package com.chenyacheng.commoblib.base;
 
 import android.text.TextUtils;
 
-import com.chenyacheng.commoblib.store.ConfigInfo;
 import com.chenyacheng.commoblib.utils.LogUtils;
 import com.chenyacheng.commoblib.utils.NetWorkUtils;
 
@@ -61,10 +60,6 @@ public class BaseApi {
         Response originalResponse = chain.proceed(request);
         // 在线缓存
         if (NetWorkUtils.isNetConnected()) {
-            String setCookie = originalResponse.headers().get("Set-Cookie");
-            if (null != setCookie && !("").equals(setCookie)) {
-                ConfigInfo.getInstance().setData(ConfigInfo.HTTP_JSESSIONID, setCookie);
-            }
             return originalResponse.newBuilder()
                     .removeHeader("Pragma")
                     // 应用服务端配置的缓存策略
@@ -143,11 +138,9 @@ public class BaseApi {
         Cache cache = new Cache(cacheFile, 1024 * 1024 * 100);
         // 增加头部信息
         Interceptor headerInterceptor = chain -> {
-            String jsessionid = String.valueOf(ConfigInfo.getInstance().getData(ConfigInfo.HTTP_JSESSIONID, ""));
             Request build = chain.request().newBuilder()
                     // 设置允许请求json数据
                     .addHeader("Content-Type", "application/json")
-                    .addHeader("Cookie", jsessionid)
                     .build();
             return chain.proceed(build);
         };
