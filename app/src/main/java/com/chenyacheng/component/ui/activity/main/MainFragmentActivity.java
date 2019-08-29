@@ -3,6 +3,8 @@ package com.chenyacheng.component.ui.activity.main;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.tabs.TabLayout;
 import androidx.fragment.app.Fragment;
@@ -145,9 +147,10 @@ public class MainFragmentActivity extends BaseInnerActivity {
     private class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
         private MyFragmentPagerAdapter(FragmentManager fm) {
-            super(fm);
+            super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         }
 
+        @NonNull
         @Override
         public Fragment getItem(int position) {
             return fragmentList.get(position);

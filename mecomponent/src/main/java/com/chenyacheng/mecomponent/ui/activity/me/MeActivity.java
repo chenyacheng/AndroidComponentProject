@@ -1,6 +1,8 @@
 package com.chenyacheng.mecomponent.ui.activity.me;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -37,9 +39,10 @@ public class MeActivity extends BaseInnerActivity {
     private class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
         private MyFragmentPagerAdapter(FragmentManager fm) {
-            super(fm);
+            super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         }
 
+        @NonNull
         @Override
         public Fragment getItem(int position) {
             return fragment;

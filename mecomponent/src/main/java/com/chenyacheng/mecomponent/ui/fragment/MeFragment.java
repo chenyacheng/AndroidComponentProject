@@ -36,6 +36,11 @@ public class MeFragment extends BaseLazyFragment<MeContract.View, MeContract.Abs
     }
 
     @Override
+    protected void lazyLoad() {
+
+    }
+
+    @Override
     public void meResult() {
 
     }

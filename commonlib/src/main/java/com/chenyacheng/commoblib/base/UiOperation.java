@@ -7,6 +7,7 @@ package com.chenyacheng.commoblib.base;
  * @date 2019/04/19
  */
 public interface UiOperation<V, P> {
+
     /**
      * 返回资源的布局
      *

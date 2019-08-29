@@ -3,6 +3,8 @@ package com.chenyacheng.findcomponent.ui.activity.find;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -47,9 +49,10 @@ public class FindActivity extends BaseInnerActivity {
     private class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
         private MyFragmentPagerAdapter(FragmentManager fm) {
-            super(fm);
+            super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         }
 
+        @NonNull
         @Override
         public Fragment getItem(int position) {
             return fragment;

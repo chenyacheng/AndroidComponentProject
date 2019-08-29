@@ -34,6 +34,11 @@ public class FindFragment extends BaseLazyFragment<FindContract.View, FindContra
     }
 
     @Override
+    protected void lazyLoad() {
+
+    }
+
+    @Override
     public void findResult() {
 
     }

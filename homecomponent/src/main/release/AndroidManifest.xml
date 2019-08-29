@@ -14,6 +14,7 @@
                     android:scheme="arouter" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.test.TestActivity" />
     </application>
 
 </manifest>
