@@ -1,6 +1,8 @@
 package com.chenyacheng.mecomponent.ui.fragment;
 
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
@@ -14,6 +16,8 @@ import com.chenyacheng.mecomponent.R;
  */
 public class MeFragment extends BaseLazyFragment<MeContract.View, MeContract.AbstractPresenter> implements MeContract.View {
 
+    private TextView meTv;
+    private TextView meTvContent;
 
     @Override
     public int getLayoutId() {
@@ -32,7 +36,10 @@ public class MeFragment extends BaseLazyFragment<MeContract.View, MeContract.Abs
 
     @Override
     public void init(View rootView) {
-
+        meTv = rootView.findViewById(R.id.me_tv);
+        meTvContent = rootView.findViewById(R.id.me_tv_content);
+        Button meBtn = rootView.findViewById(R.id.me_btn);
+        meBtn.setOnClickListener(v -> getPresenter().me());
     }
 
     @Override
@@ -41,8 +48,9 @@ public class MeFragment extends BaseLazyFragment<MeContract.View, MeContract.Abs
     }
 
     @Override
-    public void meResult() {
-
+    public void meResult(MeModel meModel) {
+        meTv.setText(meModel.getTitle());
+        meTvContent.setText(meModel.getContent());
     }
 
     @Override

@@ -15,8 +15,10 @@ public interface MeContract {
 
         /**
          * me测试
+         *
+         * @param meModel meModel
          */
-        void meResult();
+        void meResult(MeModel meModel);
 
         /**
          * 接收服务端异常数据的处理，或是自定义数据的处理，发送信息通知界面

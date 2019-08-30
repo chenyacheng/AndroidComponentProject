@@ -11,13 +11,5 @@ public class StatusCode {
     /**
      * 请求成功
      */
-    public static final String REQUEST_SUCCESS = "00000";
-    /**
-     * 获取分页列表失败/没有更多数据了
-     */
-    public static final String REQUEST_NO_DATA = "10006";
-    /**
-     * 未授权
-     */
-    public static final String UNAUTHORIZED = "000000";
+    public static final String REQUEST_SUCCESS = "200";
 }

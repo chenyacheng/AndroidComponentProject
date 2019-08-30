@@ -15,8 +15,10 @@ public interface HomeContract {
 
         /**
          * home测试
+         *
+         * @param homeModel homeModel
          */
-        void homeResult();
+        void homeResult(HomeModel homeModel);
 
         /**
          * 接收服务端异常数据的处理，或是自定义数据的处理，发送信息通知界面

@@ -1,16 +1,12 @@
 package com.chenyacheng.homecomponent.ui.fragment;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.homecomponent.R;
-import com.chenyacheng.homecomponent.ui.activity.test.TestActivity;
 
 /**
  * fragment首页
@@ -19,6 +15,9 @@ import com.chenyacheng.homecomponent.ui.activity.test.TestActivity;
  * @date 2019/01/21
  */
 public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContract.AbstractPresenter> implements HomeContract.View {
+
+    private TextView homeTv;
+    private TextView homeTvContent;
 
     @Override
     public int getLayoutId() {
@@ -37,14 +36,10 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
 
     @Override
     public void init(View rootView) {
-        // 构建ViewModel对象
-        final HomeViewModel homeViewModel = new ViewModelProvider(this, new HomeViewModel.Factory(":形参")).get(HomeViewModel.class);
-        TextView homeTv = rootView.findViewById(R.id.home_tv);
+        homeTv = rootView.findViewById(R.id.home_tv);
+        homeTvContent = rootView.findViewById(R.id.home_tv_content);
         Button homeBtn = rootView.findViewById(R.id.home_btn);
-//        homeBtn.setOnClickListener(view -> homeViewModel.getContentData());
-        homeViewModel.getContent().observe(this, homeTv::setText);
-
-        homeBtn.setOnClickListener(view -> startActivity(new Intent(mContext, TestActivity.class)));
+        homeBtn.setOnClickListener(v -> getPresenter().home());
     }
 
     @Override
@@ -53,8 +48,9 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
     }
 
     @Override
-    public void homeResult() {
-
+    public void homeResult(HomeModel homeModel) {
+        homeTv.setText(homeModel.getTitle());
+        homeTvContent.setText(homeModel.getContent());
     }
 
     @Override

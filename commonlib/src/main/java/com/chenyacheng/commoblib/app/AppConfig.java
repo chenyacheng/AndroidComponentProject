@@ -8,7 +8,7 @@ package com.chenyacheng.commoblib.app;
  */
 public class AppConfig {
 
-    public static final String BASE_URL = "http://192.168.0.199:7392/";// 测试服务器
+    public static final String BASE_URL = "https://www.easy-mock.com/mock/59c32befe0dc663341b2950e/android/";
 
     public static final String WX_APP_ID = "1111111111111111";
 }

@@ -15,8 +15,10 @@ public interface FindContract {
 
         /**
          * find测试
+         *
+         * @param findModel findModel
          */
-        void findResult();
+        void findResult(FindModel findModel);
 
         /**
          * 接收服务端异常数据的处理，或是自定义数据的处理，发送信息通知界面

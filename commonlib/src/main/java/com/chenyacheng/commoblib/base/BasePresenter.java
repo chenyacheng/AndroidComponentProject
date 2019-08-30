@@ -34,7 +34,7 @@ public abstract class BasePresenter<V extends BaseView> {
         mView = null;
     }
 
-    public <T> AutoDisposeConverter<T> bindAutoDispose() {
+    protected  <T> AutoDisposeConverter<T> bindAutoDispose() {
         return AutoDispose.autoDisposable(AndroidLifecycleScopeProvider.from(mView));
     }
 }
