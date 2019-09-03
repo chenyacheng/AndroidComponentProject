@@ -1,12 +1,12 @@
-package com.chenyacheng.homecomponent.ui.fragment;
+package com.chenyacheng.homecomponent.model;
 
 /**
- * 首页页面的model
+ * home的POJO model类
  *
  * @author chenyacheng
- * @date 2019/01/21
+ * @date 2019/09/03
  */
-class HomeModel {
+public class HomeBean {
 
     /**
      * title : 首页数据

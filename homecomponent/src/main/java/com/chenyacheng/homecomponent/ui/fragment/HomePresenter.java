@@ -7,6 +7,7 @@ import com.chenyacheng.commoblib.base.BaseRequest;
 import com.chenyacheng.commoblib.progress.ObserverResponseListener;
 import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
 import com.chenyacheng.commoblib.utils.GsonUtils;
+import com.chenyacheng.homecomponent.model.HomeBean;
 
 /**
  * 首页页面的View和Model的桥梁
@@ -24,18 +25,18 @@ public class HomePresenter extends HomeContract.AbstractPresenter {
 
     @Override
     public void home() {
-        new BaseRequest().subscribe(context, Api.getApiService().getHomeCall(), bindAutoDispose(), new ObserverResponseListener() {
+        new BaseRequest().subscribe(context, Api.getApiService().getHomeCall(), true, true, bindAutoDispose(), new ObserverResponseListener() {
             @Override
             public void onNext(Object t) {
                 if (null != getView()) {
-                    getView().homeResult(GsonUtils.removeSpaceFromJson(t, HomeModel.class));
+                    getView().render(new HomeViewState.HomeResult(GsonUtils.removeSpaceFromJson(t, HomeBean.class)));
                 }
             }
 
             @Override
             public void onError(ExceptionHandleUtils e) {
                 if (null != getView()) {
-                    getView().setMsg(e.message);
+                    getView().render(new HomeViewState.Error(e));
                 }
             }
         });

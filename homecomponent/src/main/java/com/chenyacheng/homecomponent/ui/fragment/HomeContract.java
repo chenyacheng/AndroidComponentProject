@@ -14,18 +14,11 @@ public interface HomeContract {
     interface View extends BaseView {
 
         /**
-         * home测试
+         * Renders the viewState
          *
-         * @param homeModel homeModel
+         * @param viewState The current viewState state that should be displayed
          */
-        void homeResult(HomeModel homeModel);
-
-        /**
-         * 接收服务端异常数据的处理，或是自定义数据的处理，发送信息通知界面
-         *
-         * @param msg String
-         */
-        void setMsg(String msg);
+        void render(HomeViewState viewState);
     }
 
     abstract class AbstractPresenter extends BasePresenter<View> {

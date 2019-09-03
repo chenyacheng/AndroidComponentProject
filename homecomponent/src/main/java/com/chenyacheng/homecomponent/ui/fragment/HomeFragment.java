@@ -6,7 +6,9 @@ import android.widget.TextView;
 
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
+import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.R;
+import com.chenyacheng.homecomponent.model.HomeBean;
 
 /**
  * fragment首页
@@ -48,13 +50,22 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
     }
 
     @Override
-    public void homeResult(HomeModel homeModel) {
-        homeTv.setText(homeModel.getTitle());
-        homeTvContent.setText(homeModel.getContent());
+    public void render(HomeViewState viewState) {
+        if (viewState instanceof HomeViewState.HomeResult) {
+            renderResult(((HomeViewState.HomeResult) viewState).getResult());
+        } else if (viewState instanceof HomeViewState.Error) {
+            renderError(((HomeViewState.Error) viewState).getError());
+        } else {
+            throw new IllegalArgumentException("Don't know how to render viewState " + viewState);
+        }
     }
 
-    @Override
-    public void setMsg(String msg) {
-        SnackBarBuilder.getInstance().builderShort(mContext, msg);
+    private void renderResult(HomeBean homeBean) {
+        homeTv.setText(homeBean.getTitle());
+        homeTvContent.setText(homeBean.getContent());
+    }
+
+    private void renderError(ExceptionHandleUtils error) {
+        SnackBarBuilder.getInstance().builderShort(mContext, error.message);
     }
 }
