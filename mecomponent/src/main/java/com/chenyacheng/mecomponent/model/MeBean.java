@@ -1,12 +1,12 @@
-package com.chenyacheng.mecomponent.ui.fragment;
+package com.chenyacheng.mecomponent.model;
 
 /**
- * 我的页面的model
+ * me的POJO model类
  *
  * @author chenyacheng
- * @date 2019/01/21
+ * @date 2019/09/04
  */
-class MeModel {
+public class MeBean {
 
     /**
      * title : 我的页数据

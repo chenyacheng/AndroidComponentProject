@@ -6,7 +6,9 @@ import android.widget.TextView;
 
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
+import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
 import com.chenyacheng.mecomponent.R;
+import com.chenyacheng.mecomponent.model.MeBean;
 
 /**
  * fragment我的
@@ -48,13 +50,20 @@ public class MeFragment extends BaseLazyFragment<MeContract.View, MeContract.Abs
     }
 
     @Override
-    public void meResult(MeModel meModel) {
-        meTv.setText(meModel.getTitle());
-        meTvContent.setText(meModel.getContent());
+    public void render(MeViewState viewState) {
+        if (viewState instanceof MeViewState.Error) {
+            renderError(((MeViewState.Error) viewState).getError());
+        } else if (viewState instanceof MeViewState.MeResult) {
+            renderResult(((MeViewState.MeResult) viewState).getResult());
+        }
     }
 
-    @Override
-    public void setMsg(String msg) {
-        SnackBarBuilder.getInstance().builderShort(mContext, msg);
+    private void renderError(ExceptionHandleUtils error) {
+        SnackBarBuilder.getInstance().builderShort(mContext, error.message);
+    }
+
+    private void renderResult(MeBean meBean) {
+        meTv.setText(meBean.getTitle());
+        meTvContent.setText(meBean.getContent());
     }
 }

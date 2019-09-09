@@ -1,12 +1,12 @@
-package com.chenyacheng.findcomponent.ui.fragment;
+package com.chenyacheng.findcomponent.model;
 
 /**
- * 发现页面的model
+ * find的POJO model类
  *
  * @author chenyacheng
- * @date 2019/02/19
+ * @date 2019/09/04
  */
-class FindModel {
+public class FindBean {
 
     /**
      * title : 发现页数据

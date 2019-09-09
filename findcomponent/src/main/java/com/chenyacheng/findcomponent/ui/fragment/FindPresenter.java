@@ -7,6 +7,7 @@ import com.chenyacheng.commoblib.base.BaseRequest;
 import com.chenyacheng.commoblib.progress.ObserverResponseListener;
 import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
 import com.chenyacheng.commoblib.utils.GsonUtils;
+import com.chenyacheng.findcomponent.model.FindBean;
 
 /**
  * 订单列表状态页面的View和Model的桥梁
@@ -29,14 +30,14 @@ class FindPresenter extends FindContract.AbstractPresenter {
             @Override
             public void onNext(Object t) {
                 if (null != getView()) {
-                    getView().findResult(GsonUtils.removeSpaceFromJson(t, FindModel.class));
+                    getView().render(new FindViewState.FindResult(GsonUtils.removeSpaceFromJson(t, FindBean.class)));
                 }
             }
 
             @Override
             public void onError(ExceptionHandleUtils e) {
                 if (null != getView()) {
-                    getView().setMsg(e.message);
+                    getView().render(new FindViewState.Error(e));
                 }
             }
         });

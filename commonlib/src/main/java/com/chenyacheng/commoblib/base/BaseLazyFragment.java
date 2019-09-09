@@ -18,7 +18,7 @@ import com.chenyacheng.commoblib.utils.LogUtils;
  * @author chenyacheng
  * @date 2019/01/21
  */
-public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresenter<V>> extends Fragment implements UiOperation<V, P> {
+public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresenter<V>> extends Fragment implements BaseUiOperation<V, P> {
 
     public Activity mContext;
     /**

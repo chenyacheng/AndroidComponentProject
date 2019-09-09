@@ -82,10 +82,10 @@ public class LogUtils {
             levelChoose(tag, show, logLevel);
             // 剩下的文本还是大于规定长度
             if ((log.length() - showCount) > showCount) {
-                String partLog = log.substring(showCount, log.length());
+                String partLog = log.substring(showCount);
                 showLogCompletion(tag, partLog, showCount, logLevel);
             } else {
-                String surplusLog = log.substring(showCount, log.length());
+                String surplusLog = log.substring(showCount);
                 levelChoose(tag, surplusLog, logLevel);
             }
         } else {

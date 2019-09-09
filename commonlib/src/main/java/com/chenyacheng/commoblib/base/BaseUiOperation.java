@@ -6,7 +6,7 @@ package com.chenyacheng.commoblib.base;
  * @author chenyacheng
  * @date 2019/04/19
  */
-public interface UiOperation<V, P> {
+interface BaseUiOperation<V, P> {
 
     /**
      * 返回资源的布局

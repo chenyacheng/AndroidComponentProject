@@ -27,5 +27,7 @@ public interface HomeContract {
          * home请求
          */
         abstract void home();
+
+        abstract void test(String s);
     }
 }

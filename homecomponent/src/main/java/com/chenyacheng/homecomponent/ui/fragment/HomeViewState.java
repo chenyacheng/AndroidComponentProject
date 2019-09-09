@@ -1,5 +1,6 @@
 package com.chenyacheng.homecomponent.ui.fragment;
 
+import com.chenyacheng.commoblib.base.BaseErrorViewState;
 import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.model.HomeBean;
 
@@ -10,6 +11,13 @@ import com.chenyacheng.homecomponent.model.HomeBean;
  * @date 2019/09/02
  */
 interface HomeViewState {
+
+    final class Error extends BaseErrorViewState implements HomeViewState {
+
+        Error(ExceptionHandleUtils error) {
+            super(error);
+        }
+    }
 
     final class HomeResult implements HomeViewState {
 
@@ -24,19 +32,16 @@ interface HomeViewState {
         }
     }
 
-    final class Error implements HomeViewState {
+    final class TestResult implements HomeViewState {
 
-        /**
-         * 接收服务端异常数据的处理，或是自定义数据的处理，发送信息通知界面
-         */
-        private final ExceptionHandleUtils error;
+        private final String string;
 
-        Error(ExceptionHandleUtils error) {
-            this.error = error;
+        TestResult(String string) {
+            this.string = string;
         }
 
-        ExceptionHandleUtils getError() {
-            return error;
+        String getTestResult() {
+            return string;
         }
     }
 }

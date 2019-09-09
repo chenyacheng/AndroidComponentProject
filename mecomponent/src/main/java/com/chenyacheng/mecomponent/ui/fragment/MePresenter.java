@@ -7,6 +7,7 @@ import com.chenyacheng.commoblib.base.BaseRequest;
 import com.chenyacheng.commoblib.progress.ObserverResponseListener;
 import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
 import com.chenyacheng.commoblib.utils.GsonUtils;
+import com.chenyacheng.mecomponent.model.MeBean;
 
 /**
  * @author chenyacheng
@@ -26,14 +27,14 @@ class MePresenter extends MeContract.AbstractPresenter {
             @Override
             public void onNext(Object t) {
                 if (null != getView()) {
-                    getView().meResult(GsonUtils.removeSpaceFromJson(t, MeModel.class));
+                    getView().render(new MeViewState.MeResult(GsonUtils.removeSpaceFromJson(t, MeBean.class)));
                 }
             }
 
             @Override
             public void onError(ExceptionHandleUtils e) {
                 if (null != getView()) {
-                    getView().setMsg(e.message);
+                    getView().render(new MeViewState.Error(e));
                 }
             }
         });

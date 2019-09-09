@@ -2,6 +2,7 @@ package com.chenyacheng.commoblib.base;
 
 import android.app.Application;
 import android.content.Context;
+
 import androidx.multidex.MultiDex;
 
 import com.chenyacheng.commoblib.app.AppDelegate;

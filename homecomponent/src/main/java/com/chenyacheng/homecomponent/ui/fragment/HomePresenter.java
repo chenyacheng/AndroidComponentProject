@@ -41,4 +41,9 @@ public class HomePresenter extends HomeContract.AbstractPresenter {
             }
         });
     }
+
+    @Override
+    void test(String s) {
+        getView().render(new HomeViewState.TestResult(s));
+    }
 }

@@ -6,7 +6,9 @@ import android.widget.TextView;
 
 import com.chenyacheng.commoblib.base.BaseLazyFragment;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
+import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
 import com.chenyacheng.findcomponent.R;
+import com.chenyacheng.findcomponent.model.FindBean;
 
 /**
  * fragment发现
@@ -48,13 +50,20 @@ public class FindFragment extends BaseLazyFragment<FindContract.View, FindContra
     }
 
     @Override
-    public void findResult(FindModel findModel) {
-        findTv.setText(findModel.getTitle());
-        findTvContent.setText(findModel.getContent());
+    public void render(FindViewState viewState) {
+        if (viewState instanceof FindViewState.Error) {
+            renderError(((FindViewState.Error) viewState).getError());
+        } else if (viewState instanceof FindViewState.FindResult) {
+            renderResult(((FindViewState.FindResult) viewState).getResult());
+        }
     }
 
-    @Override
-    public void setMsg(String msg) {
-        SnackBarBuilder.getInstance().builderShort(mContext, msg);
+    private void renderError(ExceptionHandleUtils error) {
+        SnackBarBuilder.getInstance().builderShort(mContext, error.message);
+    }
+
+    private void renderResult(FindBean result) {
+        findTv.setText(result.getTitle());
+        findTvContent.setText(result.getContent());
     }
 }

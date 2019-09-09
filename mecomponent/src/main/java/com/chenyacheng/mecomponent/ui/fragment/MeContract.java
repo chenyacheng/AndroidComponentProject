@@ -14,18 +14,11 @@ public interface MeContract {
     interface View extends BaseView {
 
         /**
-         * me测试
+         * Renders the viewState
          *
-         * @param meModel meModel
+         * @param viewState The current viewState state that should be displayed
          */
-        void meResult(MeModel meModel);
-
-        /**
-         * 接收服务端异常数据的处理，或是自定义数据的处理，发送信息通知界面
-         *
-         * @param msg String
-         */
-        void setMsg(String msg);
+        void render(MeViewState viewState);
     }
 
     abstract class AbstractPresenter extends BasePresenter<View> {

@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
  * @author chenyacheng
  * @date 2019/01/16
  */
-public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V>> extends BaseInnerActivity implements UiOperation<V, P> {
+public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V>> extends BaseInnerActivity implements BaseUiOperation<V, P> {
     /**
      * 引用P层
      */
