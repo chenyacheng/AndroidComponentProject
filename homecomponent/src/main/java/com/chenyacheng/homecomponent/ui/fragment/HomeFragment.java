@@ -1,5 +1,6 @@
 package com.chenyacheng.homecomponent.ui.fragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +11,7 @@ import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.HomeBean;
+import com.chenyacheng.homecomponent.ui.activity.a.OneActivity;
 
 /**
  * fragment首页
@@ -23,23 +25,24 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
     private TextView homeTvContent;
     private TextView homeTextView;
 
+
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.home_fragment_home_main;
     }
 
     @Override
-    public HomeContract.AbstractPresenter createPresenter() {
+    protected HomeContract.AbstractPresenter createPresenter() {
         return new HomePresenter(mContext);
     }
 
     @Override
-    public HomeContract.View createView() {
+    protected HomeContract.View createView() {
         return this;
     }
 
     @Override
-    public void init(View rootView) {
+    protected void init(View rootView) {
         homeTv = rootView.findViewById(R.id.home_tv);
         homeTvContent = rootView.findViewById(R.id.home_tv_content);
         Button homeBtn = rootView.findViewById(R.id.home_btn);
@@ -56,6 +59,9 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
                 SnackBarBuilder.getInstance().builderShort(homeButton, "请输入内容");
             }
         });
+
+        Button homeBtnOne = rootView.findViewById(R.id.home_btn_one);
+        homeBtnOne.setOnClickListener(v -> startActivity(new Intent(mContext, OneActivity.class)));
     }
 
     @Override

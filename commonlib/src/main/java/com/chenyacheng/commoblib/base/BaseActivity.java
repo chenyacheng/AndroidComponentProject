@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
  * @author chenyacheng
  * @date 2019/01/16
  */
-public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V>> extends BaseInnerActivity implements BaseUiOperation<V, P> {
+public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V>> extends BaseInnerActivity {
     /**
      * 引用P层
      */
@@ -37,9 +37,30 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V
     }
 
     /**
+     * 返回资源的布局
+     *
+     * @return 布局
+     */
+    protected abstract int getLayoutId();
+
+    /**
+     * 创建Presenter
+     *
+     * @return Presenter
+     */
+    protected abstract P createPresenter();
+
+    /**
+     * 创建View
+     *
+     * @return View
+     */
+    protected abstract V createView();
+
+    /**
      * 初始化
      */
-    public abstract void init();
+    protected abstract void init();
 
     /**
      * 在activity销毁时，将p层与v视图解绑
@@ -52,7 +73,7 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V
         super.onDestroy();
     }
 
-    public P getPresenter() {
+    protected P getPresenter() {
         return presenter;
     }
 }

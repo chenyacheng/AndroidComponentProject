@@ -22,22 +22,22 @@ public class FindFragment extends BaseLazyFragment<FindContract.View, FindContra
     private TextView findTvContent;
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.find_fragment_find_main;
     }
 
     @Override
-    public FindContract.AbstractPresenter createPresenter() {
+    protected FindContract.AbstractPresenter createPresenter() {
         return new FindPresenter(mContext);
     }
 
     @Override
-    public FindContract.View createView() {
+    protected FindContract.View createView() {
         return this;
     }
 
     @Override
-    public void init(View rootView) {
+    protected void init(View rootView) {
         findTv = rootView.findViewById(R.id.find_tv);
         findTvContent = rootView.findViewById(R.id.find_tv_content);
         Button findBtn = rootView.findViewById(R.id.find_btn);

@@ -8,13 +8,16 @@
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <data
                     android:host="com.chenyacheng.homecomponent"
                     android:scheme="arouter" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.test.TestActivity" />
+        <activity android:name=".ui.activity.a.OneActivity" />
+        <activity android:name=".ui.activity.b.TwoActivity" />
     </application>
 
 </manifest>

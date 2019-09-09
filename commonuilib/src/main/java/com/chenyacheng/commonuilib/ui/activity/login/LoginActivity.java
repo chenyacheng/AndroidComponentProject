@@ -3,6 +3,8 @@ package com.chenyacheng.commonuilib.ui.activity.login;
 import androidx.recyclerview.widget.DividerItemDecoration;
 
 import com.chenyacheng.commoblib.base.BaseActivity;
+import com.chenyacheng.commoblib.base.BasePresenter;
+import com.chenyacheng.commoblib.base.BaseView;
 
 /**
  * 登录页面
@@ -12,23 +14,24 @@ import com.chenyacheng.commoblib.base.BaseActivity;
  */
 public class LoginActivity extends BaseActivity {
 
+
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return 0;
     }
 
     @Override
-    public Object createPresenter() {
+    protected BasePresenter createPresenter() {
         return null;
     }
 
     @Override
-    public Object createView() {
+    protected BaseView createView() {
         return null;
     }
 
     @Override
-    public void init() {
+    protected void init() {
 
     }
 }

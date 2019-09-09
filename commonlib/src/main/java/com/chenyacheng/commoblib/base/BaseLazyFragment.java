@@ -18,9 +18,9 @@ import com.chenyacheng.commoblib.utils.LogUtils;
  * @author chenyacheng
  * @date 2019/01/21
  */
-public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresenter<V>> extends Fragment implements BaseUiOperation<V, P> {
+public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresenter<V>> extends Fragment {
 
-    public Activity mContext;
+    protected Activity mContext;
     /**
      * 引用V层和P层
      */
@@ -59,11 +59,32 @@ public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresent
     }
 
     /**
+     * 返回资源的布局
+     *
+     * @return 布局
+     */
+    protected abstract int getLayoutId();
+
+    /**
+     * 创建Presenter
+     *
+     * @return Presenter
+     */
+    protected abstract P createPresenter();
+
+    /**
+     * 创建View
+     *
+     * @return View
+     */
+    protected abstract V createView();
+
+    /**
      * 初始化
      *
      * @param rootView rootView
      */
-    public abstract void init(View rootView);
+    protected abstract void init(View rootView);
 
     @Override
     public void onResume() {
@@ -96,7 +117,7 @@ public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresent
      */
     protected abstract void lazyLoad();
 
-    public P getPresenter() {
+    protected P getPresenter() {
         return presenter;
     }
 }

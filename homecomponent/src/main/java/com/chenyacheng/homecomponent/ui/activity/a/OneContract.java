@@ -1,15 +1,13 @@
-package com.chenyacheng.homecomponent.ui.fragment;
+package com.chenyacheng.homecomponent.ui.activity.a;
 
 import com.chenyacheng.commoblib.base.BasePresenter;
 import com.chenyacheng.commoblib.base.BaseView;
 
 /**
- * 首页页面契约类
- *
- * @author chenyacheng
- * @date 2019/01/21
+ * @author Administrator
+ * @date 2019/09/09
  */
-public interface HomeContract {
+public interface OneContract {
 
     interface View extends BaseView {
 
@@ -18,21 +16,14 @@ public interface HomeContract {
          *
          * @param viewState The current viewState state that should be displayed
          */
-        void render(HomeViewState viewState);
+        void render(OneViewState viewState);
     }
 
     abstract class AbstractPresenter extends BasePresenter<View> {
 
         /**
-         * home请求
+         * 领取
          */
-        abstract void home();
-
-        /**
-         * 测试
-         *
-         * @param s 传入字符串
-         */
-        abstract void test(String s);
+        abstract void receive();
     }
 }

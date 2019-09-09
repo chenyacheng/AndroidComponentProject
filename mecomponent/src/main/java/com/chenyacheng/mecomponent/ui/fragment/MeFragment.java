@@ -22,22 +22,22 @@ public class MeFragment extends BaseLazyFragment<MeContract.View, MeContract.Abs
     private TextView meTvContent;
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.me_fragment_me_main;
     }
 
     @Override
-    public MeContract.AbstractPresenter createPresenter() {
+    protected MeContract.AbstractPresenter createPresenter() {
         return new MePresenter(mContext);
     }
 
     @Override
-    public MeContract.View createView() {
+    protected MeContract.View createView() {
         return this;
     }
 
     @Override
-    public void init(View rootView) {
+    protected void init(View rootView) {
         meTv = rootView.findViewById(R.id.me_tv);
         meTvContent = rootView.findViewById(R.id.me_tv_content);
         Button meBtn = rootView.findViewById(R.id.me_btn);
