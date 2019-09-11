@@ -8,7 +8,6 @@ import com.chenyacheng.commoblib.base.BaseView;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.TestBean;
-import com.chenyacheng.homecomponent.ui.activity.a.OneViewState;
 
 /**
  * @author Administrator

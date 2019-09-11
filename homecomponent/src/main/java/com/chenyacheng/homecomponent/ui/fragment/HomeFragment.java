@@ -25,7 +25,6 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
     private TextView homeTvContent;
     private TextView homeTextView;
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.home_fragment_home_main;
