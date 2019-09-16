@@ -120,6 +120,12 @@ public final class SnackBar {
         final ViewParent parent = this.viewLayout.getParent();
         if (parent instanceof ViewGroup) {
             ((ViewGroup) parent).removeView(this.viewLayout);
+            if (null != viewLayout) {
+                viewLayout = null;
+            }
+            if (null != targetParent) {
+                targetParent = null;
+            }
         }
     }
 }
