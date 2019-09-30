@@ -83,6 +83,7 @@ public class ProgressObserver<T> implements Observer<T>, ProgressCancelListener 
             if (!d.isDisposed()) {
                 LogUtils.showLogCompletion(TAG, "已取消", 1000, "verbose");
                 d.dispose();
+                dismissProgressDialog();
             }
         }
     }
