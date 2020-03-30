@@ -9,7 +9,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.chenyacheng.commoblib.base.BaseInnerActivity;
-import com.chenyacheng.commoblib.navigationbar.UltimateBar;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.ui.fragment.HomeFragment;
 
@@ -27,8 +26,6 @@ public class HomeActivity extends BaseInnerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity_home_main);
-        // 设置状态栏
-        UltimateBar.Companion.with(this).create().immersionBar();
         ViewPager viewPager = findViewById(R.id.home_main_view_pager);
         // 声明fragment管理
         FragmentManager fragmentManager = getSupportFragmentManager();

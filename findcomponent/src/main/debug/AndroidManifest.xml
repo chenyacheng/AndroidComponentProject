@@ -8,7 +8,7 @@
         android:icon="@mipmap/sym_def_app_icon"
         android:roundIcon="@mipmap/sym_def_app_icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppFadeTheme">
         <activity android:name=".ui.activity.find.FindActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

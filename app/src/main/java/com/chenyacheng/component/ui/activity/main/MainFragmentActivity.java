@@ -1,30 +1,28 @@
 package com.chenyacheng.component.ui.activity.main;
 
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import com.google.android.material.tabs.TabLayout;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
-import android.view.View;
-import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chenyacheng.commoblib.base.BaseInnerActivity;
 import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
-import com.chenyacheng.commoblib.navigationbar.UltimateBar;
 import com.chenyacheng.commoblib.router.ARouterConstant;
 import com.chenyacheng.commoblib.widget.CustomViewPager;
 import com.chenyacheng.component.R;
 import com.chenyacheng.findcomponent.ui.fragment.FindFragment;
 import com.chenyacheng.homecomponent.ui.fragment.HomeFragment;
 import com.chenyacheng.mecomponent.ui.fragment.MeFragment;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,15 +54,6 @@ public class MainFragmentActivity extends BaseInnerActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 设置状态栏
-        Drawable statusDrawable = new ColorDrawable(ContextCompat.getColor(MainFragmentActivity.this, R.color.common_ffffffff));
-        Drawable statusDrawable2 = new ColorDrawable(ContextCompat.getColor(MainFragmentActivity.this, R.color.common_ff000000));
-        UltimateBar.Companion.with(MainFragmentActivity.this)
-                .statusDark(true)
-                .statusDrawable(statusDrawable)
-                .statusDrawable2(statusDrawable2)
-                .create()
-                .drawableBar();
         final CustomViewPager viewPager = findViewById(R.id.main_view_pager);
         fragmentList.add(new HomeFragment());
         fragmentList.add(new FindFragment());

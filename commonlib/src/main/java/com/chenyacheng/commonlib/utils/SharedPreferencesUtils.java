@@ -18,7 +18,6 @@ public class SharedPreferencesUtils {
 
     public SharedPreferencesUtils(Context context, String fileName) {
         sharedPreferences = context.getSharedPreferences(fileName, Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
     }
 
     /**
@@ -28,6 +27,7 @@ public class SharedPreferencesUtils {
      * @param object object的基本类型对象
      */
     public void putSharedPreference(String key, Object object) {
+        editor = sharedPreferences.edit();
         if (object instanceof String) {
             editor.putString(key, (String) object);
         } else if (object instanceof Integer) {
