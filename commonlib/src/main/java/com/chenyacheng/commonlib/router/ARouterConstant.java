@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.router;
+package com.chenyacheng.commonlib.router;
 
 /**
  * 路由常量类

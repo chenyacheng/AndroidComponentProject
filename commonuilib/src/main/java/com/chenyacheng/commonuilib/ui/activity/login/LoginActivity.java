@@ -2,9 +2,9 @@ package com.chenyacheng.commonuilib.ui.activity.login;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
 
-import com.chenyacheng.commoblib.base.BaseActivity;
-import com.chenyacheng.commoblib.base.BasePresenter;
-import com.chenyacheng.commoblib.base.BaseView;
+import com.chenyacheng.commonlib.base.BaseActivity;
+import com.chenyacheng.commonlib.base.BasePresenter;
+import com.chenyacheng.commonlib.base.BaseView;
 
 /**
  * 登录页面

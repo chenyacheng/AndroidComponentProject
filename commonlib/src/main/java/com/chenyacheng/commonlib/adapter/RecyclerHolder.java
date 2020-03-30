@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.adapter;
+package com.chenyacheng.commonlib.adapter;
 
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.SparseArray;

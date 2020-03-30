@@ -1,6 +1,6 @@
-package com.chenyacheng.commoblib.base;
+package com.chenyacheng.commonlib.base;
 
-import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
 
 /**
  * 基本的错误视图模型

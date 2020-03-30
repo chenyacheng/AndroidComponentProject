@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.adapter;
+package com.chenyacheng.commonlib.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;

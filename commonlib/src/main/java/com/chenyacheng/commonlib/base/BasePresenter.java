@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.base;
+package com.chenyacheng.commonlib.base;
 
 import com.uber.autodispose.AutoDispose;
 import com.uber.autodispose.AutoDisposeConverter;

@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.widget;
+package com.chenyacheng.commonlib.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.chenyacheng.commoblib.R;
+import com.chenyacheng.commonlib.R;
 
 /**
  * 自定义ToolBar

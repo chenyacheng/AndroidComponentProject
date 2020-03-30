@@ -1,7 +1,7 @@
-package com.chenyacheng.commoblib.api;
+package com.chenyacheng.commonlib.api;
 
-import com.chenyacheng.commoblib.app.AppConfig;
-import com.chenyacheng.commoblib.base.BaseApi;
+import com.chenyacheng.commonlib.app.AppConfig;
+import com.chenyacheng.commonlib.base.BaseApi;
 
 /**
  * api请求配置

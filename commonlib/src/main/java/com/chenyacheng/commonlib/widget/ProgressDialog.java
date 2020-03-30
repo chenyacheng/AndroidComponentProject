@@ -1,11 +1,11 @@
-package com.chenyacheng.commoblib.widget;
+package com.chenyacheng.commonlib.widget;
 
 import android.app.Dialog;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import android.widget.TextView;
 
-import com.chenyacheng.commoblib.R;
+import com.chenyacheng.commonlib.R;
 
 /**
  * 自定义progressDialog对话框，用于网络请求时提示用户当前操作正在运行，让用户等待.

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-import com.chenyacheng.commoblib.base.BaseInnerActivity;
+import com.chenyacheng.commonlib.base.BaseInnerActivity;
 import com.chenyacheng.component.R;
 import com.chenyacheng.component.ui.activity.main.MainFragmentActivity;
 

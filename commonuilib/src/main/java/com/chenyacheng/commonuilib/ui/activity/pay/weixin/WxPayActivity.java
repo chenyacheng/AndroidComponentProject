@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.chenyacheng.commoblib.app.AppConfig;
-import com.chenyacheng.commoblib.constant.StringConstant;
+import com.chenyacheng.commonlib.app.AppConfig;
+import com.chenyacheng.commonlib.constant.StringConstant;
 import com.chenyacheng.wxannotaion.WXAppId;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;

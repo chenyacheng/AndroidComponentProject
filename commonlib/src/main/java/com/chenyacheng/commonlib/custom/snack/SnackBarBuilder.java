@@ -1,11 +1,11 @@
-package com.chenyacheng.commoblib.custom.snack;
+package com.chenyacheng.commonlib.custom.snack;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.view.View;
 import android.widget.PopupWindow;
 
-import com.chenyacheng.commoblib.R;
+import com.chenyacheng.commonlib.R;
 
 /**
  * 使用SnackBar入口之一，另一个入口是SnackBarHelper

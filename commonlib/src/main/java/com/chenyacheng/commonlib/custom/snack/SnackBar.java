@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.custom.snack;
+package com.chenyacheng.commonlib.custom.snack;
 
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
@@ -11,7 +11,7 @@ import android.view.ViewParent;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.chenyacheng.commoblib.R;
+import com.chenyacheng.commonlib.R;
 
 /**
  * SnackBar类

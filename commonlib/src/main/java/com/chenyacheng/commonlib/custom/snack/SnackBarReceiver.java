@@ -1,11 +1,11 @@
-package com.chenyacheng.commoblib.custom.snack;
+package com.chenyacheng.commonlib.custom.snack;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.chenyacheng.commoblib.R;
+import com.chenyacheng.commonlib.R;
 
 import java.lang.ref.WeakReference;
 

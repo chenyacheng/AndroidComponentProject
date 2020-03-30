@@ -1,9 +1,9 @@
-package com.chenyacheng.commoblib.base;
+package com.chenyacheng.commonlib.base;
 
 import android.text.TextUtils;
 
-import com.chenyacheng.commoblib.utils.LogUtils;
-import com.chenyacheng.commoblib.utils.NetWorkUtils;
+import com.chenyacheng.commonlib.utils.LogUtils;
+import com.chenyacheng.commonlib.utils.NetWorkUtils;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;

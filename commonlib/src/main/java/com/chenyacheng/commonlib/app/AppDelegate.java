@@ -1,12 +1,12 @@
-package com.chenyacheng.commoblib.app;
+package com.chenyacheng.commonlib.app;
 
 import android.app.Application;
 
-import com.chenyacheng.commoblib.BuildConfig;
-import com.chenyacheng.commoblib.store.ConfigInfo;
-import com.chenyacheng.commoblib.store.UserInfo;
-import com.chenyacheng.commoblib.utils.AppDebugUtils;
-import com.chenyacheng.commoblib.utils.LogUtils;
+import com.chenyacheng.commonlib.BuildConfig;
+import com.chenyacheng.commonlib.store.ConfigInfo;
+import com.chenyacheng.commonlib.store.UserInfo;
+import com.chenyacheng.commonlib.utils.AppDebugUtils;
+import com.chenyacheng.commonlib.utils.LogUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.crashreport.CrashReport;

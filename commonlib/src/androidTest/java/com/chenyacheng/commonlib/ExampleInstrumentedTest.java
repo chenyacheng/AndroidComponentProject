@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib;
+package com.chenyacheng.commonlib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.chenyacheng.commoblib.test", appContext.getPackageName());
+        assertEquals("com.chenyacheng.commonlib.test", appContext.getPackageName());
     }
 }

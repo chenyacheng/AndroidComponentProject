@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib;
+package com.chenyacheng.commonlib;
 
 import org.junit.Test;
 

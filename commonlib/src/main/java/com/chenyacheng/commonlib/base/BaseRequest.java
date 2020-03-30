@@ -1,9 +1,9 @@
-package com.chenyacheng.commoblib.base;
+package com.chenyacheng.commonlib.base;
 
 import android.content.Context;
 
-import com.chenyacheng.commoblib.progress.ObserverResponseListener;
-import com.chenyacheng.commoblib.progress.ProgressObserver;
+import com.chenyacheng.commonlib.progress.ObserverResponseListener;
+import com.chenyacheng.commonlib.progress.ProgressObserver;
 import com.uber.autodispose.AutoDisposeConverter;
 
 import io.reactivex.Observable;

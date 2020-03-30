@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.utils;
+package com.chenyacheng.commonlib.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

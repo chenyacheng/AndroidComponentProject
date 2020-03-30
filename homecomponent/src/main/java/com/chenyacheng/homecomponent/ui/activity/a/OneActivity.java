@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.chenyacheng.commoblib.base.BaseActivity;
-import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
-import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonlib.base.BaseActivity;
+import com.chenyacheng.commonlib.custom.snack.SnackBarBuilder;
+import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.TestBean;
 import com.chenyacheng.homecomponent.ui.activity.b.TwoActivity;

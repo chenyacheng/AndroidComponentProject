@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.custom.snack;
+package com.chenyacheng.commonlib.custom.snack;
 
 import android.app.Activity;
 import android.content.Intent;

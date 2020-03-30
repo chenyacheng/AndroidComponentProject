@@ -1,7 +1,7 @@
 package com.chenyacheng.homecomponent.ui.fragment;
 
-import com.chenyacheng.commoblib.base.BasePresenter;
-import com.chenyacheng.commoblib.base.BaseView;
+import com.chenyacheng.commonlib.base.BasePresenter;
+import com.chenyacheng.commonlib.base.BaseView;
 
 /**
  * 首页页面契约类

@@ -1,11 +1,11 @@
-package com.chenyacheng.commoblib.base;
+package com.chenyacheng.commonlib.base;
 
 import android.app.Application;
 import android.content.Context;
 
 import androidx.multidex.MultiDex;
 
-import com.chenyacheng.commoblib.app.AppDelegate;
+import com.chenyacheng.commonlib.app.AppDelegate;
 
 /**
  * 每个组件实现自己的Application，并且继承BaseApplication.

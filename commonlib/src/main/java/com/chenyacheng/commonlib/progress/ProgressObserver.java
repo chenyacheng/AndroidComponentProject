@@ -1,11 +1,11 @@
-package com.chenyacheng.commoblib.progress;
+package com.chenyacheng.commonlib.progress;
 
 import android.content.Context;
 
-import com.chenyacheng.commoblib.base.BaseResponse;
-import com.chenyacheng.commoblib.constant.StatusCode;
-import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
-import com.chenyacheng.commoblib.utils.LogUtils;
+import com.chenyacheng.commonlib.base.BaseResponse;
+import com.chenyacheng.commonlib.constant.StatusCode;
+import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonlib.utils.LogUtils;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;

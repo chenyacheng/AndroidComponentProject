@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.base;
+package com.chenyacheng.commonlib.base;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;

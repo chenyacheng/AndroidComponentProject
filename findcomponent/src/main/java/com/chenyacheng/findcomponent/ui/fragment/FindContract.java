@@ -1,7 +1,7 @@
 package com.chenyacheng.findcomponent.ui.fragment;
 
-import com.chenyacheng.commoblib.base.BasePresenter;
-import com.chenyacheng.commoblib.base.BaseView;
+import com.chenyacheng.commonlib.base.BasePresenter;
+import com.chenyacheng.commonlib.base.BaseView;
 
 /**
  * 发现页面契约类

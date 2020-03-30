@@ -1,6 +1,6 @@
-package com.chenyacheng.commoblib.api;
+package com.chenyacheng.commonlib.api;
 
-import com.chenyacheng.commoblib.base.BaseResponse;
+import com.chenyacheng.commonlib.base.BaseResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

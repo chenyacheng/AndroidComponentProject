@@ -1,8 +1,8 @@
-package com.chenyacheng.commoblib.store;
+package com.chenyacheng.commonlib.store;
 
 import android.content.Context;
 
-import com.chenyacheng.commoblib.utils.SharedPreferencesUtils;
+import com.chenyacheng.commonlib.utils.SharedPreferencesUtils;
 
 /**
  * 其他的配置信息

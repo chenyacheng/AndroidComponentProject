@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.base;
+package com.chenyacheng.commonlib.base;
 
 /**
  * 服务端返回的数据格式

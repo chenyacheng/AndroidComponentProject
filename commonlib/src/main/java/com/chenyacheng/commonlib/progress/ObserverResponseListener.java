@@ -1,6 +1,6 @@
-package com.chenyacheng.commoblib.progress;
+package com.chenyacheng.commonlib.progress;
 
-import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
 
 /**
  * 请求监听成功或者失败

@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.adapter;
+package com.chenyacheng.commonlib.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,7 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.chenyacheng.commoblib.R;
+import com.chenyacheng.commonlib.R;
+import com.chenyacheng.commonlib.adapter.RecyclerHolder;
 
 import java.util.List;
 

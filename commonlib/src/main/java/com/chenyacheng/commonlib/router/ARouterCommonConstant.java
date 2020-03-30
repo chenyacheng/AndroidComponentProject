@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.router;
+package com.chenyacheng.commonlib.router;
 
 /**
  * 路由共用常量类，如登录模块，支付模块

@@ -1,9 +1,9 @@
-package com.chenyacheng.commoblib.utils;
+package com.chenyacheng.commonlib.utils;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
-import com.chenyacheng.commoblib.base.BaseApplication;
+import com.chenyacheng.commonlib.base.BaseApplication;
 
 /**
  * 判断App是不是debug模式

@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.utils;
+package com.chenyacheng.commonlib.utils;
 
 import android.app.Activity;
 import android.content.Context;

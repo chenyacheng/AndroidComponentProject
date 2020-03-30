@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.constant;
+package com.chenyacheng.commonlib.constant;
 
 /**
  * activity的请求码和结果码

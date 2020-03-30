@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.base;
+package com.chenyacheng.commonlib.base;
 
 import androidx.lifecycle.LifecycleOwner;
 

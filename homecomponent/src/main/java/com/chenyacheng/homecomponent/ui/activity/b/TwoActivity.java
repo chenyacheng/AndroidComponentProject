@@ -2,10 +2,10 @@ package com.chenyacheng.homecomponent.ui.activity.b;
 
 import android.widget.Button;
 
-import com.chenyacheng.commoblib.base.BaseActivity;
-import com.chenyacheng.commoblib.base.BasePresenter;
-import com.chenyacheng.commoblib.base.BaseView;
-import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
+import com.chenyacheng.commonlib.base.BaseActivity;
+import com.chenyacheng.commonlib.base.BasePresenter;
+import com.chenyacheng.commonlib.base.BaseView;
+import com.chenyacheng.commonlib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.TestBean;
 

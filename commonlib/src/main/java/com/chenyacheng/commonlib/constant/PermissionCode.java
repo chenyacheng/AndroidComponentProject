@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.constant;
+package com.chenyacheng.commonlib.constant;
 
 /**
  * 权限码

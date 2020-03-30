@@ -6,9 +6,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.chenyacheng.commoblib.base.BaseLazyFragment;
-import com.chenyacheng.commoblib.custom.snack.SnackBarBuilder;
-import com.chenyacheng.commoblib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonlib.base.BaseLazyFragment;
+import com.chenyacheng.commonlib.custom.snack.SnackBarBuilder;
+import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.HomeBean;
 import com.chenyacheng.homecomponent.ui.activity.a.OneActivity;

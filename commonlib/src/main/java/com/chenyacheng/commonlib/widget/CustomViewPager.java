@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.widget;
+package com.chenyacheng.commonlib.widget;
 
 import android.content.Context;
 import androidx.annotation.NonNull;

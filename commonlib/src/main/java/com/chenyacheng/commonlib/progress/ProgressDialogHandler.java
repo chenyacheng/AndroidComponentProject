@@ -1,10 +1,10 @@
-package com.chenyacheng.commoblib.progress;
+package com.chenyacheng.commonlib.progress;
 
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
-import com.chenyacheng.commoblib.widget.ProgressDialog;
+import com.chenyacheng.commonlib.widget.ProgressDialog;
 
 import java.lang.ref.WeakReference;
 

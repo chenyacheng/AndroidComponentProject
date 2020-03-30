@@ -1,8 +1,8 @@
 package com.chenyacheng.component;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.chenyacheng.commoblib.base.BaseApplication;
-import com.chenyacheng.commoblib.utils.AppDebugUtils;
+import com.chenyacheng.commonlib.base.BaseApplication;
+import com.chenyacheng.commonlib.utils.AppDebugUtils;
 
 /**
  * App的工程Application

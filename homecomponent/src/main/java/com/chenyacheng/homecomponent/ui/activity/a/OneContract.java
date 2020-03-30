@@ -1,7 +1,7 @@
 package com.chenyacheng.homecomponent.ui.activity.a;
 
-import com.chenyacheng.commoblib.base.BasePresenter;
-import com.chenyacheng.commoblib.base.BaseView;
+import com.chenyacheng.commonlib.base.BasePresenter;
+import com.chenyacheng.commonlib.base.BaseView;
 
 /**
  * @author Administrator

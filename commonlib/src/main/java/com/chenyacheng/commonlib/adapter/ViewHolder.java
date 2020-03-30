@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.adapter;
+package com.chenyacheng.commonlib.adapter;
 
 import android.util.SparseArray;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.chenyacheng.commoblib.app;
+package com.chenyacheng.commonlib.app;
 
 /**
  * App配置参数

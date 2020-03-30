@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.chenyacheng.commoblib.base.BaseInnerActivity;
+import com.chenyacheng.commonlib.base.BaseInnerActivity;
 import com.chenyacheng.mecomponent.R;
 import com.chenyacheng.mecomponent.ui.fragment.MeFragment;
 

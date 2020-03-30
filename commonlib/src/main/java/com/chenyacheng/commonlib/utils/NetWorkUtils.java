@@ -1,10 +1,10 @@
-package com.chenyacheng.commoblib.utils;
+package com.chenyacheng.commonlib.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.chenyacheng.commoblib.base.BaseApplication;
+import com.chenyacheng.commonlib.base.BaseApplication;
 
 /**
  * 网络连接工具类
