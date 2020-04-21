@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.chenyacheng.commonlib.base.BaseActivity;
 import com.chenyacheng.commonlib.custom.snack.SnackBarBuilder;
 import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonlib.utils.InputUtils;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.TestBean;
 import com.chenyacheng.homecomponent.ui.activity.b.TwoActivity;
@@ -36,9 +37,21 @@ public class OneActivity extends BaseActivity<OneContract.View, OneContract.Abst
 
     @Override
     protected void init() {
+        toolBar();
         homeTvOne = findViewById(R.id.home_tv_one);
         Button homeBtnOne = findViewById(R.id.home_btn_one);
         homeBtnOne.setOnClickListener(v -> startActivity(new Intent(this, TwoActivity.class)));
+    }
+
+    private void toolBar() {
+        initToolBar();
+        setHeadToolBarBackground(R.color.common_ffef5214);
+        setMiddleTitle("页面1111111111111111");
+        setLeftDrawable(R.drawable.gray_back_arrow_icon);
+        setLeftDrawableClickListener(v -> {
+            InputUtils.hideSoftInput(this);
+            finish();
+        });
     }
 
     @Override
