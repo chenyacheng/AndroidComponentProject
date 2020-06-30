@@ -11,7 +11,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * 用于封装线程管理和订阅的过程，也可以封装数据库的操作
+ * 封装线程管理和订阅的类
  *
  * @author chenyacheng
  * @date 2019/01/16
