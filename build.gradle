@@ -12,9 +12,9 @@ ext {
 buildscript {
     repositories {
         // 使用本地仓库构建
-        maven {url 'http://localhost:8081/artifactory/android_group/'}
-        //google()
-        //jcenter()
+//        maven {url 'http://localhost:8081/artifactory/android_group/'}
+        google()
+        jcenter()
         
     }
     dependencies {
@@ -26,9 +26,9 @@ buildscript {
 allprojects {
     repositories {
         // 使用本地仓库构建
-        maven {url 'http://localhost:8081/artifactory/android_group/'}
-        //google()
-        //jcenter()
+//        maven {url 'http://localhost:8081/artifactory/android_group/'}
+        google()
+        jcenter()
         
     }
 }
