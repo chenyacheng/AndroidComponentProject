@@ -9,5 +9,4 @@ import androidx.lifecycle.LifecycleOwner;
  * @date 2019/01/16
  */
 public interface BaseView extends LifecycleOwner {
-
 }

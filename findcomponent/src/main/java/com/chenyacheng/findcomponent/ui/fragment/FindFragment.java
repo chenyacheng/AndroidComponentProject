@@ -5,10 +5,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.chenyacheng.commonlib.base.BaseLazyFragment;
-import com.chenyacheng.commonlib.custom.snack.SnackBarBuilder;
-import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.findcomponent.R;
 import com.chenyacheng.findcomponent.model.FindBean;
+import com.chenyacheng.snackbar.SnackBarBuilder;
 
 /**
  * fragment发现

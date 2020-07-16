@@ -5,8 +5,6 @@ import android.content.Context;
 
 import androidx.multidex.MultiDex;
 
-import com.chenyacheng.commonlib.app.AppDelegate;
-
 /**
  * 每个组件实现自己的Application，并且继承BaseApplication.
  * 组件模块中实现的Application必须在debug包中的AndroidManifest.xml中注册，否则无法使用.
@@ -27,8 +25,6 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         application = this;
-        AppDelegate appDelegate = new AppDelegate(this);
-        appDelegate.onCreate();
     }
 
     @Override

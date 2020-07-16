@@ -26,7 +26,7 @@ public class BaseRequest {
      * @param autoDisposeConverter 取消对Observable订阅，解决RxJava的内存泄漏
      * @param listener             请求监听的对象
      */
-    public void subscribe(Context context, final Observable<BaseResponse> observable, AutoDisposeConverter<BaseResponse> autoDisposeConverter, ObserverResponseListener listener) {
+    public void subscribe(Context context, final Observable<Object> observable, AutoDisposeConverter<Object> autoDisposeConverter, ObserverResponseListener listener) {
         subscribe(context, observable, false, false, autoDisposeConverter, listener);
     }
 
@@ -39,7 +39,7 @@ public class BaseRequest {
      * @param isDialog   是否显示dialog
      * @param cancelable 是否取消dialog
      */
-    public void subscribe(Context context, final Observable<BaseResponse> observable, boolean isDialog, boolean cancelable, AutoDisposeConverter<BaseResponse> autoDisposeConverter, ObserverResponseListener listener) {
+    public void subscribe(Context context, final Observable<Object> observable, boolean isDialog, boolean cancelable, AutoDisposeConverter<Object> autoDisposeConverter, ObserverResponseListener listener) {
         observable.unsubscribeOn(Schedulers.io())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

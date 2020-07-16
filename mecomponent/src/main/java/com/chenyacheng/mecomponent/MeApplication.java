@@ -2,7 +2,7 @@ package com.chenyacheng.mecomponent;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.chenyacheng.commonlib.base.BaseApplication;
-import com.chenyacheng.commonlib.utils.AppDebugUtils;
+import com.chenyacheng.commonuilib.utils.AppDebugUtils;
 
 /**
  * 我的debug模式下的Application

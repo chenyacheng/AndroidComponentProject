@@ -158,11 +158,7 @@ public abstract class AbstractCommonRecyclerAdapter<T> extends RecyclerView.Adap
             return list.size() + 1;
         } else {
             if (size != 0) {
-                if (list.size() > size) {
-                    return size;
-                } else {
-                    return list.size();
-                }
+                return Math.min(list.size(), size);
             } else {
                 return list == null ? 0 : list.size();
             }

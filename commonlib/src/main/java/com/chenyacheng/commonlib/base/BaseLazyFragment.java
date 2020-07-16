@@ -10,8 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.chenyacheng.commonlib.utils.LogUtils;
-
 /**
  * 父类->基类->动态指定类型->泛型设计（通过泛型指定动态类型->由子类指定，父类只需要规定范围即可）
  *
@@ -38,7 +36,6 @@ public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresent
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LogUtils.showLogCompletion("-----> onCreateView", "-----> onCreateView", 1000, "verbose");
         if (rootView == null) {
             rootView = inflater.inflate(getLayoutId(), container, false);
             mContext = getActivity();
@@ -95,14 +92,12 @@ public abstract class BaseLazyFragment<V extends BaseView, P extends BasePresent
                 lazyLoad();
                 // 改变首次可见的状态
                 mIsFirstVisible = false;
-                LogUtils.showLogCompletion("onFragmentFirst", "首次可见", 1000, "verbose");
             }
         }
     }
 
     @Override
     public void onDestroyView() {
-        LogUtils.showLogCompletion("-----> onDestroyView", "-----> onDestroyView", 1000, "verbose");
         // 当View被销毁的时候我们需要重新设置 isViewCreated mIsFirstVisible 的状态
         isViewCreated = false;
         mIsFirstVisible = true;

@@ -1,6 +1,5 @@
 package com.chenyacheng.commonlib.base;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.chenyacheng.commonlib.R;
 import com.chenyacheng.commonlib.utils.StatusBarUtils;
 
@@ -50,36 +48,8 @@ public abstract class BaseInnerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ARouter.getInstance().inject(this);
-        // 禁止所有的activity横屏
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         StatusBarUtils.makeStatusBarTransparent(this);
         StatusBarUtils.setStatusBarLightMode(this, false);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
     }
 
     public void initToolBar() {

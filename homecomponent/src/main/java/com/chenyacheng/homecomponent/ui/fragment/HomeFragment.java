@@ -7,11 +7,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.chenyacheng.commonlib.base.BaseLazyFragment;
-import com.chenyacheng.commonlib.custom.snack.SnackBarBuilder;
-import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.HomeBean;
 import com.chenyacheng.homecomponent.ui.activity.a.OneActivity;
+import com.chenyacheng.snackbar.SnackBarBuilder;
 
 /**
  * fragment首页

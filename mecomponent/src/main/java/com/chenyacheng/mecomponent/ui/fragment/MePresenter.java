@@ -2,11 +2,12 @@ package com.chenyacheng.mecomponent.ui.fragment;
 
 import android.content.Context;
 
-import com.chenyacheng.commonlib.api.Api;
+import com.chenyacheng.commonlib.base.BaseApi;
 import com.chenyacheng.commonlib.base.BaseRequest;
 import com.chenyacheng.commonlib.progress.ObserverResponseListener;
-import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
-import com.chenyacheng.commonlib.utils.GsonUtils;
+import com.chenyacheng.commonuilib.api.ApiService;
+import com.chenyacheng.commonuilib.config.AppConfig;
+import com.chenyacheng.commonuilib.utils.GsonUtils;
 import com.chenyacheng.mecomponent.model.MeBean;
 
 /**
@@ -23,19 +24,15 @@ class MePresenter extends MeContract.AbstractPresenter {
 
     @Override
     public void me() {
-        new BaseRequest().subscribe(context, Api.getApiService().getMeCall(), bindAutoDispose(), new ObserverResponseListener() {
+        new BaseRequest().subscribe(context, BaseApi.getInstance().getRetrofit(AppConfig.BASE_URL).create(ApiService.class).getMeCall(), bindAutoDispose(), new ObserverResponseListener() {
             @Override
-            public void onNext(Object t) {
-                if (null != getView()) {
-                    getView().render(new MeViewState.MeResult(GsonUtils.removeSpaceFromJson(t, MeBean.class)));
-                }
+            public void onSuccess(Object t) {
+                getView().render(new MeViewState.MeResult(GsonUtils.removeSpaceFromJson(t, MeBean.class)));
             }
 
             @Override
-            public void onError(ExceptionHandleUtils e) {
-                if (null != getView()) {
-                    getView().render(new MeViewState.Error(e));
-                }
+            public void onFail(Throwable e) {
+                //getView().render(new MeViewState.Error(e));
             }
         });
     }

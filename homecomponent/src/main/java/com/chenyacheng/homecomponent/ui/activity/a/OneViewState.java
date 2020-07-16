@@ -1,7 +1,7 @@
 package com.chenyacheng.homecomponent.ui.activity.a;
 
-import com.chenyacheng.commonlib.base.BaseErrorViewState;
-import com.chenyacheng.commonlib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonuilib.BaseErrorViewState;
+import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.model.TestBean;
 
 /**

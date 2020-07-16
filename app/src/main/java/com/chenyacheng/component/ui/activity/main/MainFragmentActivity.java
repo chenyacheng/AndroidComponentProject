@@ -15,13 +15,13 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chenyacheng.commonlib.base.BaseInnerActivity;
-import com.chenyacheng.commonlib.custom.snack.SnackBarBuilder;
-import com.chenyacheng.commonlib.router.ARouterConstant;
+import com.chenyacheng.commonuilib.router.ARouterConstant;
 import com.chenyacheng.commonlib.widget.CustomViewPager;
 import com.chenyacheng.component.R;
 import com.chenyacheng.findcomponent.ui.fragment.FindFragment;
 import com.chenyacheng.homecomponent.ui.fragment.HomeFragment;
 import com.chenyacheng.mecomponent.ui.fragment.MeFragment;
+import com.chenyacheng.snackbar.SnackBarBuilder;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

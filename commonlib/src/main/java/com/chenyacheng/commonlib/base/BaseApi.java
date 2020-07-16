@@ -1,8 +1,8 @@
 package com.chenyacheng.commonlib.base;
 
 import android.text.TextUtils;
+import android.util.Log;
 
-import com.chenyacheng.commonlib.utils.LogUtils;
 import com.chenyacheng.commonlib.utils.NetWorkUtils;
 
 import java.io.File;
@@ -86,34 +86,8 @@ public class BaseApi {
         }
     };
 
-    /**
-     * 无超时及缓存策略的Retrofit
-     *
-     * @param baseUrl 基本url
-     * @return Retrofit的实例
-     */
-    public Retrofit getSimpleRetrofit(String baseUrl) {
-        return new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .client(getOkHttpClient())
-                // 请求结果转换为基本类型，一般为String
-                .addConverterFactory(ScalarsConverterFactory.create())
-                // 请求的结果转为实体类
-                .addConverterFactory(GsonConverterFactory.create())
-                // 适配RxJava2.0
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
-    }
-
-    private OkHttpClient getOkHttpClient() {
-        // 定制OkHttp
-        OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
-        // OkHttp进行添加拦截器loggingInterceptor
-        httpClientBuilder.addInterceptor(getLevel());
-        httpClientBuilder.connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)
-                .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
-                .writeTimeout(WRITE_TIME_OUT, TimeUnit.SECONDS);
-        return httpClientBuilder.build();
+    public static BaseApi getInstance() {
+        return BaseApi.SingletonEnum.INSTANCE.getInstance();
     }
 
     private HttpLoggingInterceptor getLevel() {
@@ -121,7 +95,7 @@ public class BaseApi {
         // 日志显示级别
         HttpLoggingInterceptor.Level level = HttpLoggingInterceptor.Level.BODY;
         // 新建log拦截器
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(message -> LogUtils.showLogCompletion("OkHttp====Message", message, 1000, "verbose"));
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(message -> Log.v("OkHttp====Message", message));
         return loggingInterceptor.setLevel(level);
     }
 
@@ -168,5 +142,20 @@ public class BaseApi {
                 // 适配RxJava2.0
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
+    }
+
+    enum SingletonEnum {
+
+        // 枚举对象
+        INSTANCE;
+        private BaseApi singleton;
+
+        SingletonEnum() {
+            singleton = new BaseApi();
+        }
+
+        BaseApi getInstance() {
+            return singleton;
+        }
     }
 }

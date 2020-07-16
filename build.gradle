@@ -29,6 +29,7 @@ allprojects {
 //        maven {url 'http://localhost:8081/artifactory/android_group/'}
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
         
     }
 }

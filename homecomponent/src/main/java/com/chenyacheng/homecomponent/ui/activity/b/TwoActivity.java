@@ -5,11 +5,11 @@ import android.widget.Button;
 import com.chenyacheng.commonlib.base.BaseActivity;
 import com.chenyacheng.commonlib.base.BasePresenter;
 import com.chenyacheng.commonlib.base.BaseView;
-import com.chenyacheng.commonlib.custom.snack.SnackBarBuilder;
-import com.chenyacheng.commonlib.utils.InputUtils;
+import com.chenyacheng.commonuilib.utils.InputUtils;
 import com.chenyacheng.commonlib.utils.StatusBarUtils;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.TestBean;
+import com.chenyacheng.snackbar.SnackBarBuilder;
 
 /**
  * @author Administrator
