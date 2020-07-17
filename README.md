@@ -13,6 +13,18 @@
 
  使用`AndroidStudio 3.2`或更高版本进行编译
 
-### 结语
+### 使用
+Step 1. Add the JitPack repository to your build file
+Add it in your root build.gradle at the end of repositories:
 
-- 有问题，欢迎提`Issues`
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+Step 2. Add the dependency
+
+	dependencies {
+	        implementation 'com.github.yacheng199306:AndroidComponentProject:1.1'
+	}
