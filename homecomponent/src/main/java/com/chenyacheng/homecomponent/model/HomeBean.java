@@ -13,14 +13,49 @@ public class HomeBean {
      * content : 世界因你而精彩
      */
 
-    private String title;
-    private String content;
+    private String name;
+    private String sex;
+    private int age;
+    private int score;
+    private String mobile;
 
-    public String getTitle() {
-        return title == null ? "" : title;
+    public String getName() {
+        return name == null ? "" : name;
     }
 
-    public String getContent() {
-        return content == null ? "" : content;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 }

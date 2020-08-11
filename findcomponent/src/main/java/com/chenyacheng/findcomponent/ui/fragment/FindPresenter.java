@@ -5,9 +5,9 @@ import android.content.Context;
 import com.chenyacheng.commonlib.base.BaseApi;
 import com.chenyacheng.commonlib.base.BaseRequest;
 import com.chenyacheng.commonlib.progress.ObserverResponseListener;
-import com.chenyacheng.commonuilib.api.ApiService;
 import com.chenyacheng.commonuilib.config.AppConfig;
 import com.chenyacheng.commonuilib.utils.GsonUtils;
+import com.chenyacheng.findcomponent.api.FindService;
 import com.chenyacheng.findcomponent.model.FindBean;
 
 /**
@@ -27,7 +27,7 @@ class FindPresenter extends FindContract.AbstractPresenter {
 
     @Override
     void find() {
-        new BaseRequest().subscribe(context, BaseApi.getInstance().getRetrofit(AppConfig.BASE_URL).create(ApiService.class).getFindCall(), true, true, bindAutoDispose(), new ObserverResponseListener() {
+        new BaseRequest().subscribe(context, BaseApi.getInstance().getRetrofit(AppConfig.BASE_URL).create(FindService.class).getFindCall(), true, true, bindAutoDispose(), new ObserverResponseListener() {
             @Override
             public void onSuccess(Object t) {
                 getView().render(new FindViewState.FindResult(GsonUtils.removeSpaceFromJson(t, FindBean.class)));

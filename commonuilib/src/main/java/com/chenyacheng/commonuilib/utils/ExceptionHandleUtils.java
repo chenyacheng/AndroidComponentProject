@@ -23,16 +23,16 @@ public class ExceptionHandleUtils {
      * 默认为false
      */
     public boolean isErrorStatus = false;
-    public String statusCode;
+    public String code;
     public String message;
 
     public ExceptionHandleUtils(String message) {
         this.message = message;
     }
 
-    public ExceptionHandleUtils(boolean isErrorStatus, String statusCode, String message) {
+    public ExceptionHandleUtils(boolean isErrorStatus, String code, String message) {
         this.isErrorStatus = isErrorStatus;
-        this.statusCode = statusCode;
+        this.code = code;
         this.message = message;
     }
 

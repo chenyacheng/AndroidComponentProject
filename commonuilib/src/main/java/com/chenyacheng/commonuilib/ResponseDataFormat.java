@@ -2,6 +2,7 @@ package com.chenyacheng.commonuilib;
 
 import com.chenyacheng.commonlib.progress.ObserverResponseListener;
 import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
+import com.chenyacheng.commonuilib.utils.GsonUtils;
 import com.chenyacheng.commonuilib.utils.LogUtils;
 
 /**
@@ -20,10 +21,10 @@ public class ResponseDataFormat implements ObserverResponseListener {
 
     @Override
     public void onSuccess(Object t) {
+        BaseResponse baseResponse = GsonUtils.removeSpaceFromJson(t, BaseResponse.class);
         if (null != responseListener) {
-            BaseResponse baseResponse = (BaseResponse) t;
-            String status = "200";
-            if (status.equals(baseResponse.getCode())) {
+            String code = "200";
+            if (code.equals(baseResponse.getCode())) {
                 responseListener.onSuccess(baseResponse.getData());
             } else {
                 ExceptionHandleUtils exceptionHandleUtils = new ExceptionHandleUtils(true, baseResponse.getCode(), baseResponse.getMessage());

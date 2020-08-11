@@ -8,16 +8,16 @@ package com.chenyacheng.commonuilib;
  */
 public class BaseResponse {
 
-    private String statusCode;
-    private String msg;
+    private String code;
+    private String message;
     private Object data;
 
     public String getCode() {
-        return statusCode;
+        return code;
     }
 
     public String getMessage() {
-        return msg;
+        return message;
     }
 
     public Object getData() {

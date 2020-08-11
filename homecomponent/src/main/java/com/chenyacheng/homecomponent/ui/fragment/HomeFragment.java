@@ -84,8 +84,8 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
     }
 
     private void renderResult(HomeBean homeBean) {
-        homeTv.setText(homeBean.getTitle());
-        homeTvContent.setText(homeBean.getContent());
+        homeTv.setText(homeBean.getName());
+        homeTvContent.setText(homeBean.getSex());
     }
 
     private void renderTest(String testResult) {
