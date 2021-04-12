@@ -1,7 +1,7 @@
 package com.chenyacheng.homecomponent.model;
 
 /**
- * @author Administrator
+ * @author chenyacheng
  * @date 2019/09/09
  */
 public class TestBean {

@@ -5,12 +5,12 @@ import android.content.Context;
 import com.chenyacheng.homecomponent.model.TestBean;
 
 /**
- * @author Administrator
+ * @author chenyacheng
  * @date 2019/09/09
  */
 class OnePresenter extends OneContract.AbstractPresenter {
 
-    private Context context;
+    private final Context context;
 
     OnePresenter(Context context) {
         this.context = context;

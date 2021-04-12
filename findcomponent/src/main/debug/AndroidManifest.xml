@@ -15,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.one.OneActivity" />
+        <activity android:name=".ui.activity.two.TwoActivity" />
+        <activity android:name=".proxy.Login1Activity" />
     </application>
 
 </manifest>

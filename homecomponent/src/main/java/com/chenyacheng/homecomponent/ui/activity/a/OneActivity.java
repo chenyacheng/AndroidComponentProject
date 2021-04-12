@@ -13,7 +13,7 @@ import com.chenyacheng.homecomponent.ui.activity.b.TwoActivity;
 import com.chenyacheng.snackbar.SnackBarBuilder;
 
 /**
- * @author Administrator
+ * @author chenyacheng
  * @date 2019/09/09
  */
 public class OneActivity extends BaseActivity<OneContract.View, OneContract.AbstractPresenter> implements OneContract.View {

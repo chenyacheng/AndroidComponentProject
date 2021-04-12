@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+import androidx.annotation.NonNull;
+
 import com.chenyacheng.commonlib.base.BaseInnerActivity;
 import com.chenyacheng.component.R;
 import com.chenyacheng.component.ui.activity.main.MainFragmentActivity;
@@ -47,7 +49,7 @@ public class SplashActivity extends BaseInnerActivity implements Handler.Callbac
     }
 
     @Override
-    public boolean handleMessage(Message msg) {
+    public boolean handleMessage(@NonNull Message msg) {
         startActivity(new Intent(this, MainFragmentActivity.class));
         finish();
         overridePendingTransition(R.anim.activity_fade_enter, R.anim.activity_fade_exit);

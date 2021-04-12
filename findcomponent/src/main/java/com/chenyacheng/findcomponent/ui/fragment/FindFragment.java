@@ -1,5 +1,6 @@
 package com.chenyacheng.findcomponent.ui.fragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -8,6 +9,7 @@ import com.chenyacheng.commonlib.base.BaseLazyFragment;
 import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.findcomponent.R;
 import com.chenyacheng.findcomponent.model.FindBean;
+import com.chenyacheng.findcomponent.ui.activity.one.OneActivity;
 import com.chenyacheng.snackbar.SnackBarBuilder;
 
 /**
@@ -42,6 +44,9 @@ public class FindFragment extends BaseLazyFragment<FindContract.View, FindContra
         findTvContent = rootView.findViewById(R.id.find_tv_content);
         Button findBtn = rootView.findViewById(R.id.find_btn);
         findBtn.setOnClickListener(v -> getPresenter().find());
+
+        Button button = rootView.findViewById(R.id.find_new_page);
+        button.setOnClickListener(v -> startActivity(new Intent(mContext, OneActivity.class)));
     }
 
     @Override

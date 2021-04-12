@@ -12,7 +12,7 @@ import com.chenyacheng.homecomponent.model.TestBean;
 import com.chenyacheng.snackbar.SnackBarBuilder;
 
 /**
- * @author Administrator
+ * @author chenyacheng
  * @date 2019/09/09
  */
 public class TwoActivity extends BaseActivity {

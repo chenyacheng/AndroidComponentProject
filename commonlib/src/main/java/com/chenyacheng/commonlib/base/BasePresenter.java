@@ -59,7 +59,7 @@ public abstract class BasePresenter<V extends BaseView> {
 
     private class ViewHandler implements InvocationHandler {
 
-        private BaseView view;
+        private final BaseView view;
 
         ViewHandler(BaseView view) {
             this.view = view;

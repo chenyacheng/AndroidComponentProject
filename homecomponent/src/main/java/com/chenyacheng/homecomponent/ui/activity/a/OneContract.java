@@ -4,7 +4,7 @@ import com.chenyacheng.commonlib.base.BasePresenter;
 import com.chenyacheng.commonlib.base.BaseView;
 
 /**
- * @author Administrator
+ * @author chenyacheng
  * @date 2019/09/09
  */
 public interface OneContract {

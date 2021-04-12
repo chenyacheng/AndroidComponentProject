@@ -148,7 +148,7 @@ public class BaseApi {
 
         // 枚举对象
         INSTANCE;
-        private BaseApi singleton;
+        private final BaseApi singleton;
 
         SingletonEnum() {
             singleton = new BaseApi();

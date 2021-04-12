@@ -74,7 +74,7 @@ public class LogUtils {
      * @param log       打印的日志
      * @param showCount 显示每段的长度
      * @param logLevel  日志级别
-     * @aram tag 标签
+     * @param tag 标签
      */
     public static void showLogCompletion(String tag, String log, int showCount, String logLevel) {
         if (log.length() > showCount) {
@@ -95,9 +95,6 @@ public class LogUtils {
 
     private static void levelChoose(String tag, String show, String logLevel) {
         switch (logLevel) {
-            case "verbose":
-                verbose(tag, show);
-                break;
             case "debug":
                 debug(tag, show);
                 break;

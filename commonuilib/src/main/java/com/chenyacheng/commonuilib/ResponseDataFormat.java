@@ -13,7 +13,7 @@ import com.chenyacheng.commonuilib.utils.LogUtils;
  */
 public class ResponseDataFormat implements ObserverResponseListener {
 
-    private ResponseListener responseListener;
+    private final ResponseListener responseListener;
 
     public ResponseDataFormat(ResponseListener responseListener) {
         this.responseListener = responseListener;

@@ -2,6 +2,8 @@ package com.chenyacheng.commonlib.progress;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -13,7 +15,7 @@ import io.reactivex.disposables.Disposable;
  */
 public class ProgressObserver<T> implements Observer<T>, ProgressCancelListener {
 
-    private ObserverResponseListener listener;
+    private final ObserverResponseListener listener;
     private ProgressDialogHandler mProgressDialogHandler;
     private Disposable d;
 
@@ -25,20 +27,20 @@ public class ProgressObserver<T> implements Observer<T>, ProgressCancelListener 
     }
 
     @Override
-    public void onSubscribe(Disposable d) {
+    public void onSubscribe(@NonNull Disposable d) {
         this.d = d;
         showProgressDialog();
     }
 
     @Override
-    public void onNext(T t) {
+    public void onNext(@NonNull T t) {
         if (null != listener) {
             listener.onSuccess(t);
         }
     }
 
     @Override
-    public void onError(Throwable e) {
+    public void onError(@NonNull Throwable e) {
         dismissProgressDialog();
         if (null != listener) {
             listener.onFail(e);

@@ -5,7 +5,7 @@ import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.model.TestBean;
 
 /**
- * @author Administrator
+ * @author chenyacheng
  * @date 2019/09/09
  */
 public interface OneViewState {

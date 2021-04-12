@@ -20,7 +20,7 @@ import com.chenyacheng.homecomponent.model.HomeBean;
  */
 public class HomePresenter extends HomeContract.AbstractPresenter {
 
-    private Context context;
+    private final Context context;
 
     HomePresenter(Context context) {
         this.context = context;

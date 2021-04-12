@@ -20,9 +20,9 @@ public class ProgressDialogHandler extends Handler {
     static final int DISMISS_PROGRESS_DIALOG = 2;
 
     private ProgressDialog pd;
-    private boolean cancelable;
+    private final boolean cancelable;
     private ProgressCancelListener mProgressCancelListener;
-    private WeakReference<Context> mWeakReference;
+    private final WeakReference<Context> mWeakReference;
 
     ProgressDialogHandler(Context context, ProgressCancelListener mProgressCancelListener, boolean cancelable) {
         super();

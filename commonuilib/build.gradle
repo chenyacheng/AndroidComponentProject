@@ -72,7 +72,7 @@ dependencies {
     // 微信支付封装库
     api project(':wxannotaion')
     annotationProcessor project(':wxcompiler')
-    api 'com.github.yacheng199306:SnackBar:1.0'
+    api 'com.github.chenyacheng:SnackBar:1.2.1'
     // Glide图片加载库
     api 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
