@@ -1,0 +1,1 @@
+include ':app', ':commonlib', ':homecomponent', ':mecomponent', ':findcomponent', ':commonuilib', ':wxannotaion', ':wxcompiler'
