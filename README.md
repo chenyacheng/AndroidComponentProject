@@ -26,5 +26,5 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.yacheng199306:AndroidComponentProject:1.1'
+	        implementation 'com.github.chenyacheng:AndroidComponentProject:1.2'
 	}
