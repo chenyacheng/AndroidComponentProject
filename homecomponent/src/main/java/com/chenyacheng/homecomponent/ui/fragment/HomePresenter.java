@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.chenyacheng.commonlib.base.BaseApi;
 import com.chenyacheng.commonlib.base.BaseRequest;
-import com.chenyacheng.commonuilib.ResponseDataFormat;
-import com.chenyacheng.commonuilib.ResponseListener;
+import com.chenyacheng.commonuilib.base.ResponseDataFormat;
+import com.chenyacheng.commonuilib.base.ResponseListener;
 import com.chenyacheng.commonuilib.config.AppConfig;
 import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.commonuilib.utils.GsonUtils;

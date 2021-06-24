@@ -1,9 +1,6 @@
 package com.chenyacheng.commonlib.base;
 
 import android.app.Application;
-import android.content.Context;
-
-import androidx.multidex.MultiDex;
 
 /**
  * 每个组件实现自己的Application，并且继承BaseApplication.
@@ -25,12 +22,5 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         application = this;
-    }
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        // 5.0以下机型无法运行应用
-        MultiDex.install(this);
     }
 }

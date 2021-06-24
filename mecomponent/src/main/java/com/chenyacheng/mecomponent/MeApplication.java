@@ -1,7 +1,7 @@
 package com.chenyacheng.mecomponent;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.chenyacheng.commonlib.base.BaseApplication;
+import com.chenyacheng.commonuilib.config.AppDelegate;
 import com.chenyacheng.commonuilib.utils.AppDebugUtils;
 
 /**
@@ -10,7 +10,7 @@ import com.chenyacheng.commonuilib.utils.AppDebugUtils;
  * @author chenyacheng
  * @date 2019/01/18
  */
-public class MeApplication extends BaseApplication {
+public class MeApplication extends AppDelegate {
 
     @Override
     public void onCreate() {

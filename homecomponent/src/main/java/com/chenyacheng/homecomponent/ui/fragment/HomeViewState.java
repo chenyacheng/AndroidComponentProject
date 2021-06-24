@@ -1,6 +1,6 @@
 package com.chenyacheng.homecomponent.ui.fragment;
 
-import com.chenyacheng.commonuilib.BaseErrorViewState;
+import com.chenyacheng.commonuilib.base.BaseErrorViewState;
 import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.model.HomeBean;
 

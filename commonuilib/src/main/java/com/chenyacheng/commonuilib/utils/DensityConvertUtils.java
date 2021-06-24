@@ -11,7 +11,7 @@ import android.content.Context;
 public class DensityConvertUtils {
 
     private static volatile DensityConvertUtils instance = null;
-    private Context mContext;
+    private final Context mContext;
 
     private DensityConvertUtils(Context context) {
         // 这里变化了，把当前Context指向个应用程序的Context

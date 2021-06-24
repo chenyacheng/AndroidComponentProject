@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class SharedPreferencesUtils {
 
-    private SharedPreferences sharedPreferences;
+    private final SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
     public SharedPreferencesUtils(Context context, String fileName) {

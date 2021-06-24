@@ -22,9 +22,8 @@ public class MD5Utils {
     public static String mapSortToString(Map<String, String> map) {
         StringBuilder sb = new StringBuilder();
         TreeMap<String, String> treeMap = new TreeMap<>(map);
-        for (Object o : treeMap.entrySet()) {
-            Map.Entry entry = (Map.Entry) o;
-            String string = (String) entry.getValue();
+        for (Map.Entry<String, String> entry : treeMap.entrySet()) {
+            String string = entry.getValue();
             sb.append(string);
         }
         return sb.toString();

@@ -77,7 +77,7 @@ public class AppUtils {
         String[] serverVersionArray = serverVersion.split("\\.");
         int index = 0;
         // 获取最小长度值
-        int minLen = (currentVersionArray.length <= serverVersionArray.length) ? currentVersionArray.length : serverVersionArray.length;
+        int minLen = Math.min(currentVersionArray.length, serverVersionArray.length);
         int diff = 0;
         // 循环判断每位的大小
         while (index < minLen && (diff = Integer.parseInt(currentVersionArray[index]) - Integer.parseInt(serverVersionArray[index])) == 0) {

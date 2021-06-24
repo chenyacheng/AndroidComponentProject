@@ -1,6 +1,6 @@
 package com.chenyacheng.mecomponent.ui.fragment;
 
-import com.chenyacheng.commonuilib.BaseErrorViewState;
+import com.chenyacheng.commonuilib.base.BaseErrorViewState;
 import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.mecomponent.model.MeBean;
 

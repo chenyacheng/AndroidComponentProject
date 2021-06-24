@@ -26,7 +26,7 @@ public class AppDebugUtils {
         try {
             PackageManager pm = BaseApplication.getApplication().getPackageManager();
             ApplicationInfo ai = pm.getApplicationInfo(BaseApplication.getApplication().getPackageName(), 0);
-            return ai != null && (ai.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+            return (ai.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
             return false;

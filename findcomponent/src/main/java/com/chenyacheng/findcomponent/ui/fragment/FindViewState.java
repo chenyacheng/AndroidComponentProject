@@ -1,6 +1,6 @@
 package com.chenyacheng.findcomponent.ui.fragment;
 
-import com.chenyacheng.commonuilib.BaseErrorViewState;
+import com.chenyacheng.commonuilib.base.BaseErrorViewState;
 import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.findcomponent.model.FindBean;
 

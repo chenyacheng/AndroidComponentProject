@@ -57,10 +57,6 @@ public class WxPayActivity extends Activity implements IWXAPIEventHandler {
                     intent.setAction(StringConstant.BROADCAST_PAY_SUCCESS);
                     sendBroadcast(intent);
                     break;
-                case -1:
-                    intent.setAction(StringConstant.BROADCAST_PAY_ERROR);
-                    sendBroadcast(intent);
-                    break;
                 case -2:
                     intent.setAction(StringConstant.BROADCAST_PAY_CANCEL);
                     sendBroadcast(intent);

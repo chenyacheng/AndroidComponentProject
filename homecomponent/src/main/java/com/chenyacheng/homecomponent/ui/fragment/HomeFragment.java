@@ -1,16 +1,16 @@
 package com.chenyacheng.homecomponent.ui.fragment;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.chenyacheng.commonlib.base.BaseLazyFragment;
+import com.chenyacheng.commonuilib.constant.RouterConstant;
 import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.HomeBean;
-import com.chenyacheng.homecomponent.ui.activity.a.OneActivity;
 import com.chenyacheng.snackbar.SnackBarBuilder;
 
 /**
@@ -60,7 +60,7 @@ public class HomeFragment extends BaseLazyFragment<HomeContract.View, HomeContra
         });
 
         Button homeBtnOne = rootView.findViewById(R.id.home_btn_one);
-        homeBtnOne.setOnClickListener(v -> startActivity(new Intent(mContext, OneActivity.class)));
+        homeBtnOne.setOnClickListener(v -> ARouter.getInstance().build(RouterConstant.PATH_HOME_ONE_ACTIVITY).navigation());
     }
 
     @Override

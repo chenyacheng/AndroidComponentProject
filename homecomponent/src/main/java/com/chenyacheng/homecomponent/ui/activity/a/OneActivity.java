@@ -1,21 +1,23 @@
 package com.chenyacheng.homecomponent.ui.activity.a;
 
-import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.chenyacheng.commonlib.base.BaseActivity;
+import com.chenyacheng.commonuilib.constant.RouterConstant;
 import com.chenyacheng.commonuilib.utils.ExceptionHandleUtils;
 import com.chenyacheng.commonuilib.utils.InputUtils;
 import com.chenyacheng.homecomponent.R;
 import com.chenyacheng.homecomponent.model.TestBean;
-import com.chenyacheng.homecomponent.ui.activity.b.TwoActivity;
 import com.chenyacheng.snackbar.SnackBarBuilder;
 
 /**
  * @author chenyacheng
  * @date 2019/09/09
  */
+@Route(path = RouterConstant.PATH_HOME_ONE_ACTIVITY)
 public class OneActivity extends BaseActivity<OneContract.View, OneContract.AbstractPresenter> implements OneContract.View {
 
     private TextView homeTvOne;
@@ -40,13 +42,13 @@ public class OneActivity extends BaseActivity<OneContract.View, OneContract.Abst
         toolBar();
         homeTvOne = findViewById(R.id.home_tv_one);
         Button homeBtnOne = findViewById(R.id.home_btn_one);
-        homeBtnOne.setOnClickListener(v -> startActivity(new Intent(this, TwoActivity.class)));
+        homeBtnOne.setOnClickListener(v -> ARouter.getInstance().build(RouterConstant.PATH_HOME_TWO_ACTIVITY).navigation());
     }
 
     private void toolBar() {
         initToolBar();
         setHeadToolBarBackground(R.color.common_ffef5214);
-        setMiddleTitle("页面1111111111111111");
+        setMiddleTitle("页面1");
         setLeftDrawable(R.drawable.gray_back_arrow_icon);
         setLeftDrawableClickListener(v -> {
             InputUtils.hideSoftInput(this);
