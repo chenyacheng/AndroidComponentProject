@@ -1,12 +1,14 @@
 ext {
-    compileSdk = 29
-    buildTools = "29.0.3"
-    javaVersion = JavaVersion.VERSION_1_8
-    minSdk = 21
-    maxSdk = 29
-    targetSdk = 29
-    versionCode = 11
-    versionName = "1.1"
+    androidConfig = [
+            compileSdk : 30,
+            buildTools:  "29.0.3",
+            minSdk: 21,
+            maxSdk : 29,
+            targetSdk : 29,
+            versionCode : 11,
+            versionName : "1.1"
+
+    ]
 }
 
 buildscript {
@@ -18,7 +20,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.android.tools.build:gradle:4.2.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }

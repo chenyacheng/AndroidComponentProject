@@ -3,7 +3,7 @@ if (isBuildModule.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
-
+def androidConfig = rootProject.ext.androidConfig
 android {
     resourcePrefix "home_"
 
@@ -22,23 +22,23 @@ android {
     }
 
     // 用于编译的SDK版本
-    compileSdkVersion compileSdk
+    compileSdkVersion androidConfig.compileSdk
     // 用于Gradle编译项目的工具版本
-    buildToolsVersion buildTools
+    buildToolsVersion androidConfig.buildTools
     defaultConfig {
         if (isBuildModule.toBoolean()) {
             applicationId "com.chenyacheng.homecomponent"
             multiDexEnabled true
         }
         // 最低、最高支持Android版本
-        minSdkVersion minSdk
-        maxSdkVersion maxSdk
+        minSdkVersion androidConfig.minSdk
+        maxSdkVersion androidConfig.maxSdk
         // 目标版本
-        targetSdkVersion targetSdk
+        targetSdkVersion androidConfig.targetSdk
         // 版本号
-        versionCode versionCode
+        versionCode androidConfig.versionCode
         // 版本名称
-        versionName versionName
+        versionName androidConfig.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
@@ -73,9 +73,13 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility javaVersion
-        targetCompatibility javaVersion
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding true
+    }
+
 }
 
 dependencies {

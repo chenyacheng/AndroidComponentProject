@@ -10,6 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.chenyacheng.commonlib.base.BaseInnerActivity;
 import com.chenyacheng.homecomponent.R;
+import com.chenyacheng.homecomponent.databinding.HomeActivityHomeMainBinding;
 import com.chenyacheng.homecomponent.ui.fragment.HomeFragment;
 
 /**
@@ -21,6 +22,8 @@ import com.chenyacheng.homecomponent.ui.fragment.HomeFragment;
 public class HomeActivity extends BaseInnerActivity {
 
     private HomeFragment fragment;
+
+    HomeActivityHomeMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

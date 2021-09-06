@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
-
+def androidConfig = rootProject.ext.androidConfig
 // 配置所有android构建过程需要的参数
 android {
     // 用于编译的SDK版本
-    compileSdkVersion compileSdk
+    compileSdkVersion androidConfig.compileSdk
     // 用于Gradle编译项目的工具版本
-    buildToolsVersion buildTools
+    buildToolsVersion androidConfig.buildTools
     // 项目默认配置
     defaultConfig {
         // 引用第三方库的jar文件，都有可能会触发这个错误，api 'com.android.support:multidex:1.0.3'，在Application类的attachBaseContext方法添加MultiDex.install(this);
@@ -13,14 +13,14 @@ android {
         // 应用程序包名
         applicationId "com.chenyacheng.component"
         // 最低、最高支持Android版本
-        minSdkVersion minSdk
-        maxSdkVersion maxSdk
+        minSdkVersion androidConfig.minSdk
+        maxSdkVersion androidConfig.maxSdk
         // 目标版本
-        targetSdkVersion targetSdk
+        targetSdkVersion androidConfig.targetSdk
         // 版本号
-        versionCode versionCode
+        versionCode androidConfig.versionCode
         // 版本名称
-        versionName versionName
+        versionName androidConfig.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
@@ -57,8 +57,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility javaVersion
-        targetCompatibility javaVersion
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
