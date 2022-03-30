@@ -26,5 +26,8 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.chenyacheng:AndroidComponentProject:1.2'
+	        implementation 'com.github.chenyacheng:AndroidComponentProject:1.2.1'
 	}
+
+Step 3
+    项目使用jdk 8
